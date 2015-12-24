@@ -30,7 +30,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
         //addBlurEffect()
         setUpCoreLocation()
-        let timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "locationUpdate", userInfo: nil, repeats: true)
+        let timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "locationUpdate", userInfo: nil, repeats: true)
         timer.tolerance = 0.05
         
         startStopButton.layer.cornerRadius = startStopButton.bounds.width/2
@@ -43,6 +43,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         {
             if let speed2 = manager.location?.speed
             {
+                print("Logging data")
                 mphLabel.text = "\(2*round(speed2)) MPH"
                 data += [manager.location!]
             }
@@ -81,8 +82,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         {
             manager.stopUpdatingLocation()
             startStopButton.setTitle("Start Drive", forState: UIControlState.Normal)
-            print("\(data.count) data points saved")
-            data = []
             startStopButton.setTitle("Start Drive", forState: UIControlState.Normal)
             startStopButton.backgroundColor = UIColor(red: 0/255, green: 198/255, blue: 0/255, alpha: 1.0)
             buttonHeightConstraint.constant = 0
@@ -142,13 +141,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("Failiure!")
+        print("Location manager failed!")
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "showTripData")
+        {
+            let nav = segue.destinationViewController as! UINavigationController
+            let tripSummary = nav.viewControllers[0] as! TripSummaryTableViewController
+            print("\(data.count) data points saved")
+            tripSummary.data = data
+            data = []
+        }
     }
+    
 
 
 }

@@ -10,8 +10,42 @@ import UIKit
 import CoreLocation
 
 class TripSummaryTableViewController: UITableViewController {
-    var info = ["Average Speed", "Time Lapsed", "Driver Rating", "Number of offenses", "% Time Over Limit"]
+    var info = ["Average Speed", "Time Elapsed", "Driver Rating", "Number of offenses"]
     var data: [CLLocation] = []
+    
+    var timeLapsed: Double
+    {
+        get
+        {
+            guard (data.count > 0) else {return 0.0}
+            return data.last!.timestamp.timeIntervalSinceDate(data.first!.timestamp)
+        }
+    }
+    
+    var averageSpeed: Double
+    {
+        get
+        {
+            guard (data.count > 0) else {return 0.0}
+            var total: CLLocationSpeed = 0
+            for location in data
+            {
+                total += location.speed
+            }
+            return total/Double(data.count)
+        }
+    }
+    
+    var numberOfOffenses:Int = 10
+    
+    var driverRating: Double
+    {
+        get
+        {
+            guard (data.count > 0) else {return 0.0}
+            return 10-Double(numberOfOffenses/data.count)*10
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +90,18 @@ class TripSummaryTableViewController: UITableViewController {
         cell.detailTextLabel?.textColor = UIColor.whiteColor()
         cell.detailTextLabel?.backgroundColor = UIColor.clearColor()
         
+        switch info[indexPath.row] {
+        case "Time Elapsed":
+            cell.detailTextLabel?.text = String(format: "%.1f minutes", timeLapsed)
+        case "Average Speed":
+            cell.detailTextLabel?.text = String(format: "%.1f MPH", 2.2374 * averageSpeed)
+        case "Driver Rating":
+            cell.detailTextLabel?.text = String(format: "%.1f out of 10", driverRating)
+        case "Number of offenses":
+            cell.detailTextLabel?.text = String(format: "%d", numberOfOffenses)
+        default:
+            break
+        }
         return cell
     }
 
