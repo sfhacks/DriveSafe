@@ -11,52 +11,17 @@ import CoreLocation
 
 class TripSummaryTableViewController: UITableViewController {
     var info = ["Average Speed", "Time Elapsed", "Driver Rating", "Number of offenses"]
-    var data: [CLLocation] = []
-    
-    var timeLapsed: Double
-    {
-        get
-        {
-            guard (data.count > 0) else {return 0.0}
-            return data.last!.timestamp.timeIntervalSinceDate(data.first!.timestamp)
-        }
-    }
-    
-    var averageSpeed: Double
-    {
-        get
-        {
-            guard (data.count > 0) else {return 0.0}
-            var total: CLLocationSpeed = 0
-            for location in data
-            {
-                total += location.speed
-            }
-            return total/Double(data.count)
-        }
-    }
-    
-    var numberOfOffenses:Int = 10
-    
-    var driverRating: Double
-    {
-        get
-        {
-            guard (data.count > 0) else {return 0.0}
-            return 10-Double(numberOfOffenses/data.count)*10
-        }
-    }
+    var trip: Trip!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationController?.navigationBar.hideBottomHairline()
-        (presentingViewController as! UINavigationController).navigationBarHidden = true
-        
         let blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
         blur.frame = CGRect(x: view.bounds.origin.x, y: view.bounds.origin.y-64, width: view.bounds.width, height: view.bounds.height+64)
         blur.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
         view.insertSubview(blur, atIndex: 0)
         
+        super.viewDidLoad()
+        navigationController?.navigationBar.hideBottomHairline()
+        (presentingViewController as! UINavigationController).navigationBarHidden = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -92,13 +57,14 @@ class TripSummaryTableViewController: UITableViewController {
         
         switch info[indexPath.row] {
         case "Time Elapsed":
-            cell.detailTextLabel?.text = String(format: "%.1f minutes", timeLapsed)
+            print(trip.timeLapsed)
+            cell.detailTextLabel?.text = String(format: "%.1f minutes", trip.timeLapsed/60.0)
         case "Average Speed":
-            cell.detailTextLabel?.text = String(format: "%.1f MPH", 2.2374 * averageSpeed)
+            cell.detailTextLabel?.text = String(format: "%.1f MPH", 2.2374 * trip.averageSpeed)
         case "Driver Rating":
-            cell.detailTextLabel?.text = String(format: "%.1f out of 10", driverRating)
+            cell.detailTextLabel?.text = String(format: "%.1f out of 10", trip.driverRating)
         case "Number of offenses":
-            cell.detailTextLabel?.text = String(format: "%d", numberOfOffenses)
+            cell.detailTextLabel?.text = String(format: "%d", trip.numberOfOffenses)
         default:
             break
         }
