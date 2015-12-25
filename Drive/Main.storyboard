@@ -75,6 +75,7 @@
                                 <segue destination="Zuk-yM-Tma" kind="presentation" identifier="showTrips" modalPresentationStyle="overCurrentContext" id="dra-mF-YGM"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="gear" id="SJC-qD-vyz"/>
                     </navigationItem>
                     <connections>
                         <outlet property="buttonHeightConstraint" destination="ch1-9u-Jeb" id="PCq-dd-9B9"/>
@@ -251,6 +252,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gear" width="22" height="22"/>
         <image name="traffic" width="5456" height="3632"/>
     </resources>
     <inferredMetricsTieBreakers>

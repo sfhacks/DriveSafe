@@ -12,7 +12,7 @@ import Social
 import AEXML
 import RealmSwift
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresenterVC {
     
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var mphLabel: UILabel!
@@ -185,7 +185,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         do
         {
             let xml = try AEXMLDocument(xmlData: data)
-            var limit = 0
+            var limit = 15
             if let tags = xml.root["way"]["tag"].allWithAttributes(["k": "maxspeed"])
             {
                 for tag in tags
@@ -215,12 +215,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         print("Location manager failed!")
     }
     
+    func didDismiss() {
+        blur.removeFromSuperview()
+    }
+    
+    var blur: UIVisualEffectView!
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
+        blur.frame = CGRect(x: view.bounds.origin.x, y: view.bounds.origin.y-64, width: view.bounds.width, height: view.bounds.height+64)
+        blur.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
+        view.addSubview(blur)
         
         if (segue.identifier == "showTripData")
         {
             let nav = segue.destinationViewController as! UINavigationController
             let tripSummary = nav.viewControllers[0] as! TripSummaryTableViewController
+            tripSummary.delegate = self
             print("\(data.count) data points saved")
             print("\(limits.count) speed limits saved")
             tripSummary.trip = Trip(data: data, limits: limits)
@@ -241,6 +253,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 defaults.setObject(tripsData, forKey: "trips")
             }
             defaults.synchronize()
+        }
+        if (segue.identifier == "showTrips")
+        {
+            let nav = segue.destinationViewController as! UINavigationController
+            let trips = nav.viewControllers[0] as! TripsTableViewController
+            trips.delegate = self
         }
     }
     

@@ -9,8 +9,9 @@
 import UIKit
 
 class TripsTableViewController: UITableViewController {
-    
     var trips: [Trip]!
+    var delegate: ModalPresenterVC?
+    
     override func viewDidLoad() {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let tripsData = defaults.objectForKey("trips") as? NSData
@@ -25,15 +26,14 @@ class TripsTableViewController: UITableViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.hideBottomHairline()
         (presentingViewController as! UINavigationController).navigationBarHidden = true
-        
-        let blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
-        blur.frame = CGRect(x: view.bounds.origin.x, y: view.bounds.origin.y-64, width: view.bounds.width, height: view.bounds.height+64)
-        blur.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
-        view.insertSubview(blur, atIndex: 0)
     }
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
         (presentingViewController as! UINavigationController).navigationBarHidden = false
+        if let delegate = delegate
+        {
+            delegate.didDismiss()
+        }
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -77,6 +77,7 @@ class TripsTableViewController: UITableViewController {
             let trip = trips[tableView.indexPathForCell((sender as! UITableViewCell))!.row]
             let tripVC = segue.destinationViewController as! TripSummaryTableViewController
             tripVC.trip = trip
+            tripVC.notModal = true
         }
     }
     

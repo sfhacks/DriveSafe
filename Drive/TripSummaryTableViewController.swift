@@ -9,16 +9,18 @@
 import UIKit
 import CoreLocation
 
+protocol ModalPresenterVC
+{
+    func didDismiss()
+}
+
 class TripSummaryTableViewController: UITableViewController {
     var info = ["Average Speed", "Time Elapsed", "Driver Rating", "Number of offenses"]
     var trip: Trip!
+    var delegate: ModalPresenterVC?
+    var notModal: Bool = false
     
     override func viewDidLoad() {
-        let blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
-        blur.frame = CGRect(x: view.bounds.origin.x, y: view.bounds.origin.y-64, width: view.bounds.width, height: view.bounds.height+64)
-        blur.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
-        view.insertSubview(blur, atIndex: 0)
-        
         super.viewDidLoad()
         navigationController?.navigationBar.hideBottomHairline()
         (presentingViewController as! UINavigationController).navigationBarHidden = true
@@ -27,6 +29,10 @@ class TripSummaryTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if (notModal)
+        {
+            navigationController?.navigationItem.leftBarButtonItem?.title = "Back"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,8 +78,18 @@ class TripSummaryTableViewController: UITableViewController {
     }
 
     @IBAction func doneButtonPressed(sender: AnyObject) {
-        (presentingViewController as! UINavigationController).navigationBarHidden = false
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        if (!notModal)
+        {
+            if let delegate = delegate
+            {
+                delegate.didDismiss()
+                presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+                (presentingViewController as! UINavigationController).navigationBarHidden = false
+            }
+        }else
+        {
+             navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     /*
     // Override to support conditional editing of the table view.
