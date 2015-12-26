@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A1571A711C2B359200922698"
-               BuildableName = "Drive.app"
-               BlueprintName = "Drive"
-               ReferencedContainer = "container:Drive.xcodeproj">
+               BuildableName = "DriveSafe.app"
+               BlueprintName = "DriveSafe"
+               ReferencedContainer = "container:DriveSafe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A1571A711C2B359200922698"
-            BuildableName = "Drive.app"
-            BlueprintName = "Drive"
-            ReferencedContainer = "container:Drive.xcodeproj">
+            BuildableName = "DriveSafe.app"
+            BlueprintName = "DriveSafe"
+            ReferencedContainer = "container:DriveSafe.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A1571A711C2B359200922698"
-            BuildableName = "Drive.app"
-            BlueprintName = "Drive"
-            ReferencedContainer = "container:Drive.xcodeproj">
+            BuildableName = "DriveSafe.app"
+            BlueprintName = "DriveSafe"
+            ReferencedContainer = "container:DriveSafe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A1571A711C2B359200922698"
-            BuildableName = "Drive.app"
-            BlueprintName = "Drive"
-            ReferencedContainer = "container:Drive.xcodeproj">
+            BuildableName = "DriveSafe.app"
+            BlueprintName = "DriveSafe"
+            ReferencedContainer = "container:DriveSafe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -22,7 +22,7 @@
 
 /* Begin PBXFileReference section */
 		067EC4313145E732104B0CD0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		A1571A721C2B359200922698 /* Drive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1571A721C2B359200922698 /* DriveSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1571A751C2B359200922698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1571A771C2B359200922698 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A1571A7C1C2B359300922698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		A1571A731C2B359200922698 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A1571A721C2B359200922698 /* Drive.app */,
+				A1571A721C2B359200922698 /* DriveSafe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,9 +107,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A1571A711C2B359200922698 /* Drive */ = {
+		A1571A711C2B359200922698 /* DriveSafe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1571A841C2B359300922698 /* Build configuration list for PBXNativeTarget "Drive" */;
+			buildConfigurationList = A1571A841C2B359300922698 /* Build configuration list for PBXNativeTarget "DriveSafe" */;
 			buildPhases = (
 				614C9A79FE4D07C58B9EDCC4 /* Check Pods Manifest.lock */,
 				A1571A6E1C2B359200922698 /* Sources */,
@@ -122,9 +122,9 @@
 			);
 			dependencies = (
 			);
-			name = Drive;
+			name = DriveSafe;
 			productName = Drive;
-			productReference = A1571A721C2B359200922698 /* Drive.app */;
+			productReference = A1571A721C2B359200922698 /* DriveSafe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -147,7 +147,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A1571A6D1C2B359200922698 /* Build configuration list for PBXProject "Drive" */;
+			buildConfigurationList = A1571A6D1C2B359200922698 /* Build configuration list for PBXProject "DriveSafe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -160,7 +160,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A1571A711C2B359200922698 /* Drive */,
+				A1571A711C2B359200922698 /* DriveSafe */,
 			);
 		};
 /* End PBXProject section */
@@ -343,7 +343,7 @@
 				INFOPLIST_FILE = Drive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.ke.Drive;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DriveSafe;
 			};
 			name = Debug;
 		};
@@ -355,14 +355,14 @@
 				INFOPLIST_FILE = Drive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.ke.Drive;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DriveSafe;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A1571A6D1C2B359200922698 /* Build configuration list for PBXProject "Drive" */ = {
+		A1571A6D1C2B359200922698 /* Build configuration list for PBXProject "DriveSafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1571A821C2B359300922698 /* Debug */,
@@ -371,7 +371,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A1571A841C2B359300922698 /* Build configuration list for PBXNativeTarget "Drive" */ = {
+		A1571A841C2B359300922698 /* Build configuration list for PBXNativeTarget "DriveSafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1571A851C2B359300922698 /* Debug */,
