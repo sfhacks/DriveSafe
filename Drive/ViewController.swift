@@ -118,9 +118,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     func tweet()
     {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
-            
             let tweetShare:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-            tweetShare.setInitialText("I'm driving. Don't Text. #X")
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = .NoStyle
+            formatter.timeStyle = .ShortStyle
+            tweetShare.setInitialText("I'm driving. Don't text me until \(formatter.stringFromDate(NSDate().dateByAddingTimeInterval(600))). #X")
             self.presentViewController(tweetShare, animated: true, completion: nil)
             
         } else {
@@ -132,6 +134,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }
+    
+    
     func showTripData()
     {
         performSegueWithIdentifier("showTripData", sender: data)

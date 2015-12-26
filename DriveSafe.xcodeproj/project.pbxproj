@@ -72,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				A1571A871C2B3AF300922698 /* CoreLocation.framework */,
-				A1571A741C2B359200922698 /* Drive */,
+				A1571A741C2B359200922698 /* DriveSafe */,
 				A1571A731C2B359200922698 /* Products */,
 				517B025DC85A34BD1CAE0C3D /* Pods */,
 				575A4BF7FBDE6680D5C04DAF /* Frameworks */,
@@ -87,7 +87,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A1571A741C2B359200922698 /* Drive */ = {
+		A1571A741C2B359200922698 /* DriveSafe */ = {
 			isa = PBXGroup;
 			children = (
 				A1571A751C2B359200922698 /* AppDelegate.swift */,
@@ -101,6 +101,7 @@
 				A1571A7E1C2B359300922698 /* LaunchScreen.storyboard */,
 				A1571A811C2B359300922698 /* Info.plist */,
 			);
+			name = DriveSafe;
 			path = Drive;
 			sourceTree = "<group>";
 		};
@@ -342,7 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Drive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.ke.Drive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.ke.DriveSafe;
 				PRODUCT_NAME = DriveSafe;
 			};
 			name = Debug;
@@ -354,7 +355,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Drive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.ke.Drive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.ke.DriveSafe;
 				PRODUCT_NAME = DriveSafe;
 			};
 			name = Release;
