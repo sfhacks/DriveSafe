@@ -47,7 +47,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     {
         let lat = location.coordinate.latitude
         let long = location.coordinate.longitude
-        let distance = 0.0005
+        let distance = 0.0020
         let left = long - distance
         let bottom = lat - distance
         let right = long + distance
@@ -186,6 +186,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
         }
         
         let url = generateURL(manager.location!)
+        print(url)
         performGetRequest(url, completion: { (data, HTTPStatusCode, error) -> Void in
             if let data = data
             {
@@ -201,18 +202,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
         do
         {
             let xml = try AEXMLDocument(xmlData: data)
-            var limit = 15
-            if let tags = xml.root["way"]["tag"].allWithAttributes(["k": "maxspeed"])
+            var limit = -5
+            print(xml.stringValue)
+            if let ways = xml.root["way"].all
             {
-                for tag in tags
+                for way in ways
                 {
-                    let str: String = tag.attributes["v"]!
-                    if let speed = Int(str.characters.split{$0 == " "}.map(String.init)[0])
+                    let speedLimit = getSpeedLimitOfWay(way)
+                    if speedLimit > limit
                     {
-                        if (speed > limit)
-                        {
-                            limit = speed
-                        }
+                        limit = speedLimit
                     }
                 }
             }
@@ -225,6 +224,61 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             print(error)
         }
         
+    }
+    
+    func getSpeedLimitOfWay(way: AEXMLElement) -> Int
+    {
+        var limit = 0
+        if let speedTags = way["tag"].allWithAttributes(["k": "maxspeed"])
+        {
+            for speedTag in speedTags
+            {
+                if let value = speedTag.attributes["v"]
+                {
+                    if let speed = Int(value.characters.split{$0 == " "}.map(String.init)[0])
+                    {
+                        if (speed > limit)
+                        {
+                            limit = speed
+                        }
+                    }
+                }
+            }
+        }
+        
+        if (limit > 0)
+        {
+            return limit
+        }
+        
+        if let typeTags = way["tag"].allWithAttributes(["k": "highway"])
+        {
+            for typeTag in typeTags
+            {
+                if let roadType = typeTag.attributes["k"]
+                {
+                    switch(roadType)
+                    {
+                    case "motorway":
+                        limit = 60
+                    case "trunk":
+                        limit = 50
+                    case "primary":
+                        limit = 35
+                    case "secondary":
+                        limit = 35
+                    case "tertiary":
+                        limit = 35
+                    case "residential":
+                        limit = 25
+                    default:
+                        limit = 30
+                    }
+                }
+            }
+        }
+        
+        return limit
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
