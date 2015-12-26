@@ -27,11 +27,9 @@ class TripSummaryTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        if (notModal)
+        if (!notModal)
         {
-            navigationController?.navigationItem.leftBarButtonItem?.title = "Back"
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "doneButtonPressed:")
         }
     }
 
@@ -78,18 +76,18 @@ class TripSummaryTableViewController: UITableViewController {
     }
 
     @IBAction func doneButtonPressed(sender: AnyObject) {
-        if (!notModal)
-        {
+        //if (!notModal)
+        //{
             if let delegate = delegate
             {
                 delegate.didDismiss()
                 presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
                 (presentingViewController as! UINavigationController).navigationBarHidden = false
             }
-        }else
+        /*}else
         {
              navigationController?.dismissViewControllerAnimated(true, completion: nil)
-        }
+        }*/
     }
     /*
     // Override to support conditional editing of the table view.

@@ -28,6 +28,12 @@ class TripsTableViewController: UITableViewController {
         (presentingViewController as! UINavigationController).navigationBarHidden = true
     }
     
+    override func viewWillAppear(animated: Bool) {
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.tableView.alpha = 1
+        })
+    }
+    
     @IBAction func doneButtonPressed(sender: AnyObject) {
         (presentingViewController as! UINavigationController).navigationBarHidden = false
         if let delegate = delegate
@@ -78,6 +84,9 @@ class TripsTableViewController: UITableViewController {
             let tripVC = segue.destinationViewController as! TripSummaryTableViewController
             tripVC.trip = trip
             tripVC.notModal = true
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.tableView.alpha = 0
+            })
         }
     }
     

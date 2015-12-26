@@ -11,6 +11,9 @@ import CoreLocation
 
 class Trip: NSObject, NSCoding
 {
+    var startDate: NSDate!
+    var stopDate: NSDate!
+    
     var data: [CLLocation]
     {
         didSet
@@ -50,7 +53,7 @@ class Trip: NSObject, NSCoding
         get
         {
             guard (data.count > 0) else {return 0.0}
-            return data.last!.timestamp.timeIntervalSinceDate(data.first!.timestamp)
+            return stopDate.timeIntervalSinceDate(startDate)
         }
     }
     

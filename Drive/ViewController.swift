@@ -10,7 +10,6 @@ import UIKit
 import CoreLocation
 import Social
 import AEXML
-import RealmSwift
 
 class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresenterVC {
     
@@ -26,6 +25,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     var limits: [Int] = [] // Array of speed limits
     
     var isDriving: Bool = false
+    var startDate: NSDate!
+    var stopDate: NSDate!
     
     override func viewDidLoad() {
         mphLabel.alpha = 0.0
@@ -76,21 +77,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     @IBAction func startStopPressed() {
         if isDriving == false
         {
+            let alert = UIAlertController(title: "Do Not Disturb", message: "Make sure to turn on Do Not Disturb mode on your iPhone to block calls and notifications so you can stay safe on the road", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert) -> Void in
+                self.tweet()
+            }))
+            presentViewController(alert, animated: true, completion: nil)
+            
             isDriving = true
-            if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
-                
-                let tweetShare:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-                tweetShare.setInitialText("I'm driving. Don't Text. #X")
-                //self.presentViewController(tweetShare, animated: true, completion: nil)
-                
-            } else {
-                
-                let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to activate this function", preferredStyle: UIAlertControllerStyle.Alert)
-                
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                
-                self.presentViewController(alert, animated: true, completion: nil)
-            }
             startStopButton.setTitle("Stop", forState: UIControlState.Normal)
             startStopButton.backgroundColor = UIColor(red: 223/255, green: 0, blue: 0, alpha: 0.8)
             buttonHeightConstraint.constant = view.bounds.height/3 - startStopButton.bounds.height/2
@@ -102,8 +95,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
                 self.mphLabel.alpha = 1.0
             })
             manager.startUpdatingLocation()
+            startDate = NSDate()
         }else
         {
+            stopDate = NSDate()
             manager.stopUpdatingLocation()
             startStopButton.setTitle("Start Drive", forState: UIControlState.Normal)
             startStopButton.setTitle("Start Drive", forState: UIControlState.Normal)
@@ -119,7 +114,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             performSelector("showTripData", withObject: self, afterDelay: 1.0)
         }
     }
-
+    
+    func tweet()
+    {
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+            
+            let tweetShare:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            tweetShare.setInitialText("I'm driving. Don't Text. #X")
+            self.presentViewController(tweetShare, animated: true, completion: nil)
+            
+        } else {
+            
+            let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to activate this function", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
     func showTripData()
     {
         performSegueWithIdentifier("showTripData", sender: data)
@@ -169,7 +181,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             mphLabel.text = "\(round(2.2374*locations[0].speed)) MPH"
         }
         
-        var url = generateURL(manager.location!)
+        let url = generateURL(manager.location!)
         performGetRequest(url, completion: { (data, HTTPStatusCode, error) -> Void in
             if let data = data
             {
@@ -236,6 +248,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             print("\(data.count) data points saved")
             print("\(limits.count) speed limits saved")
             tripSummary.trip = Trip(data: data, limits: limits)
+            tripSummary.trip.startDate = startDate
+            tripSummary.trip.stopDate = stopDate
+            
             data = []
             limits = []
             let defaults = NSUserDefaults.standardUserDefaults()
@@ -260,9 +275,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             let trips = nav.viewControllers[0] as! TripsTableViewController
             trips.delegate = self
         }
+        if (segue.identifier == "showTips")
+        {
+            let nav = segue.destinationViewController as! UINavigationController
+            let tips = nav.viewControllers[0] as! TipsViewController
+            tips.delegate = self
+        }
     }
-    
-
-
 }
 

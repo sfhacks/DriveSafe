@@ -17,6 +17,7 @@
 		A1CD13181C2B6BD100AF2804 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1CD13171C2B6BD100AF2804 /* Main.storyboard */; };
 		A1CD131A1C2B72C800AF2804 /* TripSummaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD13191C2B72C800AF2804 /* TripSummaryTableViewController.swift */; };
 		A1E849801C2C9C1C00D37E7C /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E8497F1C2C9C1C00D37E7C /* Trip.swift */; };
+		A1E849821C2F153F00D37E7C /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E849811C2F153F00D37E7C /* TipsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A1CD13171C2B6BD100AF2804 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A1CD13191C2B72C800AF2804 /* TripSummaryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripSummaryTableViewController.swift; sourceTree = "<group>"; };
 		A1E8497F1C2C9C1C00D37E7C /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		A1E849811C2F153F00D37E7C /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		B38EF844DD2A50C1329A1709 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B698B6BA5F70BBE1DB232E52 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -90,6 +92,7 @@
 			children = (
 				A1571A751C2B359200922698 /* AppDelegate.swift */,
 				A1CD13171C2B6BD100AF2804 /* Main.storyboard */,
+				A1E849811C2F153F00D37E7C /* TipsViewController.swift */,
 				A1E8497F1C2C9C1C00D37E7C /* Trip.swift */,
 				A1A283D91C2C6097005DBC41 /* TripsTableViewController.swift */,
 				A1CD13191C2B72C800AF2804 /* TripSummaryTableViewController.swift */,
@@ -230,6 +233,7 @@
 			files = (
 				A1E849801C2C9C1C00D37E7C /* Trip.swift in Sources */,
 				A1571A781C2B359200922698 /* ViewController.swift in Sources */,
+				A1E849821C2F153F00D37E7C /* TipsViewController.swift in Sources */,
 				A1571A761C2B359200922698 /* AppDelegate.swift in Sources */,
 				A1A283DA1C2C6097005DBC41 /* TripsTableViewController.swift in Sources */,
 				A1CD131A1C2B72C800AF2804 /* TripSummaryTableViewController.swift in Sources */,
