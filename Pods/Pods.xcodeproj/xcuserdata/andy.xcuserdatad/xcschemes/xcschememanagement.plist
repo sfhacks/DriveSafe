@@ -9,7 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Drive.xcscheme</key>
+		<key>Charts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-DriveSafe.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4C93302B56EF4BC44478206FB752FCC2</key>
+		<key>096C901F0950CA1D513777F0F9CBA223</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>24090FBCEF7A50AE384678B5C071804B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3E95A5680275BF7E75598FC8A00B9FA4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>6B9813D7E7E5E2BAC2903B82EC58E643</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F96A1B59D2CDD26868168CE565749D67</key>
 		<dict>
 			<key>primary</key>
 			<true/>

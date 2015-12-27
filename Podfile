@@ -3,7 +3,8 @@
 # Uncomment this line if you're using Swift
 use_frameworks!
 pod 'AEXML'
-target 'Drive' do
+pod 'Charts'
+target 'DriveSafe' do
 
 end
 

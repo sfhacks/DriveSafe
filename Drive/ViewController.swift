@@ -14,9 +14,12 @@ import AudioToolbox
 
 class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresenterVC {
     
+    // MARK: - properties
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var mphLabel: UILabel!
     @IBOutlet weak var speedLimitLabel: UILabel!
+    
+    // Used for animation
     @IBOutlet weak var buttonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var mphHeightConstraint: NSLayoutConstraint!
     
@@ -26,29 +29,95 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     var limits: [Int] = [] // Array of speed limits
     
     var isDriving: Bool = false
+    
+    // Stores start and stop dates of current drive
     var startDate: NSDate!
     var stopDate: NSDate!
     
+    // MARK: - VC Lifecycle
     override func viewDidLoad() {
         mphLabel.alpha = 0.0
         mphHeightConstraint.constant = -50
         super.viewDidLoad()
         navigationController?.navigationBar.hideBottomHairline()
 
-        //addBlurEffect()
         setUpCoreLocation()
-        //let timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "locationUpdate", userInfo: nil, repeats: true)
-        //timer.tolerance = 0.05
         
+        // Make button a circle
         startStopButton.layer.cornerRadius = startStopButton.bounds.width/2
         startStopButton.clipsToBounds = true
+    }
+    
+    // MARK: - Core Location
+    func setUpCoreLocation()
+    {
+        manager = CLLocationManager()
+        manager.delegate = self
         
-        SpeedLimitFinder.getSpeedLimit(CLLocationCoordinate2D(latitude: 37.360214, longitude: -122.148528)) { (limit) -> Void in
-            print(limit)
+        manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+        
+        // Set a movement threshold for new events.
+        manager.distanceFilter = 2; // meters
+        manager.requestAlwaysAuthorization()
+        
+        
+        if CLLocationManager.authorizationStatus() == .NotDetermined {
+            print("Requesting authorization")
+            manager.requestAlwaysAuthorization()
+        }else
+        {
+            print("Authorization good")
         }
     }
     
+    func locationManager(manager: CLLocationManager,
+        didChangeAuthorizationStatus status: CLAuthorizationStatus)
+    {
+        if status == CLAuthorizationStatus.AuthorizedAlways {
+            print("Authorization successful")
+        }else
+        {
+            print("Authorizaiton failed. Not always")
+        }
+    }
     
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        print("Adding new location data point")
+        if (locations[0].speed < 0)
+        {
+            mphLabel.text = "\(0) MPH"
+        }else
+        {
+            mphLabel.text = "\(round(2.2374*locations[0].speed)) MPH"
+        }
+        
+        SpeedLimitFinder.getSpeedLimit(locations[0].coordinate, completion: { (var limit) -> Void in
+            if limit == nil
+            {
+                limit = 40 // Default speed limit
+            }
+            self.speedLimitLabel.text! = "Current Speed Limit: \(limit!) MPH"
+            self.limits.append(limit!)
+            if let speed = manager.location?.speed
+            {
+                if (speed > Double(limit!+5))
+                {
+                    AudioServicesPlaySystemSound(1255) // Play beep if user is over the speed limit
+                }
+            }
+        })
+        
+        data.append(locations[0])
+    }
+    
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Location manager failed!")
+    }
+
+    
+    // MARK: - Drive Control
     @IBAction func startStopPressed() {
         if isDriving == false
         {
@@ -116,73 +185,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
         performSegueWithIdentifier("showTripData", sender: data)
     }
     
-    func setUpCoreLocation()
-    {
-        manager = CLLocationManager()
-        manager.delegate = self
-        
-        manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-        
-        // Set a movement threshold for new events.
-        manager.distanceFilter = 2; // meters
-        manager.requestAlwaysAuthorization()
-        
-        
-        if CLLocationManager.authorizationStatus() == .NotDetermined {
-            print("Requesting authorization")
-            manager.requestAlwaysAuthorization()
-        }else
-        {
-            print("Authorization good")
-            //manager.startUpdatingLocation()
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager,
-        didChangeAuthorizationStatus status: CLAuthorizationStatus)
-    {
-        if status == CLAuthorizationStatus.AuthorizedAlways {
-            //manager.startUpdatingLocation()
-        }else
-        {
-            print("Authorizaiton failed. Not always")
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        print("Adding new location data point")
-        if (locations[0].speed < 0)
-        {
-            mphLabel.text = "\(0) MPH"
-        }else
-        {
-            mphLabel.text = "\(round(2.2374*locations[0].speed)) MPH"
-        }
-        
-        SpeedLimitFinder.getSpeedLimit(locations[0].coordinate, completion: { (var limit) -> Void in
-            if limit == nil
-            {
-                limit = 40
-            }
-            self.speedLimitLabel.text! = "Current Speed Limit: \(limit!) MPH"
-            self.limits.append(limit!)
-            if let speed = manager.location?.speed
-            {
-                if (speed > Double(limit!))
-                {
-                    AudioServicesPlaySystemSound(1255)
-                }
-            }
-        })
-        
-        data.append(locations[0])
-    }
-    
-    
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("Location manager failed!")
-    }
+    // MARK: - Navigation
     
     func didDismiss() {
         blur.removeFromSuperview()
@@ -211,7 +214,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             data = []
             limits = []
             let defaults = NSUserDefaults.standardUserDefaults()
-
+            
+            // Store new trip in NSUserDefaults
             if let tripsData = defaults.objectForKey("trips") as? NSData
             {
                 var trips = NSKeyedUnarchiver.unarchiveObjectWithData(tripsData) as! [Trip]

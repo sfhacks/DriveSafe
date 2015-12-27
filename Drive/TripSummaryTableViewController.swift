@@ -10,30 +10,42 @@ import UIKit
 import CoreLocation
 import MessageUI
 
+// didDismiss is called when a modalally presented view controller dismisses itself
+// This protocol is used to allow ViewController.swift to be notified so it can remove the blur when needed
 protocol ModalPresenterVC
 {
     func didDismiss()
 }
 
 class TripSummaryTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+    // MARK: - Properties
     var info = ["Average Speed", "Time Elapsed", "Driver Rating", "Number of offenses"]
     var trip: Trip!
     var delegate: ModalPresenterVC?
-    var notModal: Bool = false
+    var notModal: Bool = false // If this is true, the view controller was pushed by a navigation controller. If false, it was modally presented
     
+    // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.hideBottomHairline()
         (presentingViewController as! UINavigationController).navigationBarHidden = true
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
         if (!notModal)
         {
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "doneButtonPressed:")
         }
     }
-
+    
+    @IBAction func doneButtonPressed(sender: AnyObject) {
+        if let delegate = delegate
+        {
+            delegate.didDismiss()
+            presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            (presentingViewController as! UINavigationController).navigationBarHidden = false
+        }
+    }
+    
+    // MARK: - Email Sending
     @IBAction func sendEmail(sender: UIBarButtonItem) {
         revertNav()
         var vc = MFMailComposeViewController()
@@ -47,10 +59,6 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         setNav()
         dismissViewControllerAnimated(true, completion: nil)
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -90,63 +98,5 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
         return cell
     }
 
-    @IBAction func doneButtonPressed(sender: AnyObject) {
-        //if (!notModal)
-        //{
-            if let delegate = delegate
-            {
-                delegate.didDismiss()
-                presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-                (presentingViewController as! UINavigationController).navigationBarHidden = false
-            }
-        /*}else
-        {
-             navigationController?.dismissViewControllerAnimated(true, completion: nil)
-        }*/
-    }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

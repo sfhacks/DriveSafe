@@ -1,10 +1,13 @@
 PODS:
   - AEXML (2.0.1)
+  - Charts (2.1.6)
 
 DEPENDENCIES:
   - AEXML
+  - Charts
 
 SPEC CHECKSUMS:
   AEXML: d6bb5b994521fcf3667ee8ccc1ed533f31b19218
+  Charts: 5e1e5ac23898e5b09d226a2fc3e9d86bc281937e
 
 COCOAPODS: 0.39.0

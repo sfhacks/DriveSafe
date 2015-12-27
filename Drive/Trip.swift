@@ -11,10 +11,11 @@ import CoreLocation
 
 class Trip: NSObject, NSCoding
 {
+    // MARK: - Properties
     var startDate: NSDate!
     var stopDate: NSDate!
     
-    var data: [CLLocation]
+    var data: [CLLocation] // Array of locations
     {
         didSet
         {
@@ -24,33 +25,7 @@ class Trip: NSObject, NSCoding
             }
         }
     }
-    var limits: [Int]
-    
-    
-    init(data: [CLLocation], limits: [Int])
-    {
-        self.data = data
-        self.limits = limits
-    }
-    
-    required init (coder decoder: NSCoder)
-    {
-        data = decoder.decodeObjectForKey("data") as! [CLLocation]
-        limits = decoder.decodeObjectForKey("limits") as! [Int]
-        startDate = decoder.decodeObjectForKey("startDate") as! NSDate
-        stopDate = decoder.decodeObjectForKey("stopDate") as! NSDate
-    }
-    
-    func encodeWithCoder(coder: NSCoder)
-    {
-        coder.encodeObject(data, forKey: "data")
-        coder.encodeObject(limits, forKey: "limits")
-        coder.encodeObject(startDate, forKey: "startDate")
-        coder.encodeObject(stopDate, forKey: "stopDate")
-    }
-    
-    
-    
+    var limits: [Int] // Array of speed limits
     
     var timeLapsed: Double
         {
@@ -99,6 +74,33 @@ class Trip: NSObject, NSCoding
             guard (data.count > 0) else {return 0.0}
             return 10-Double(Double(numberOfOffenses)/Double(data.count))*10
         }
+    }
+    
+    // MARK: - Constructors
+    
+    init(data: [CLLocation], limits: [Int])
+    {
+        self.data = data
+        self.limits = limits
+    }
+    
+    // MARK: - NSUserDefaults configuration
+    
+    // These two methods are required in order to store Trip objects in NSUserDefaults
+    required init (coder decoder: NSCoder)
+    {
+        data = decoder.decodeObjectForKey("data") as! [CLLocation]
+        limits = decoder.decodeObjectForKey("limits") as! [Int]
+        startDate = decoder.decodeObjectForKey("startDate") as! NSDate
+        stopDate = decoder.decodeObjectForKey("stopDate") as! NSDate
+    }
+    
+    func encodeWithCoder(coder: NSCoder)
+    {
+        coder.encodeObject(data, forKey: "data")
+        coder.encodeObject(limits, forKey: "limits")
+        coder.encodeObject(startDate, forKey: "startDate")
+        coder.encodeObject(stopDate, forKey: "stopDate")
     }
     
 }

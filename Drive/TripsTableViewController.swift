@@ -12,7 +12,9 @@ class TripsTableViewController: UITableViewController {
     var trips: [Trip]!
     var delegate: ModalPresenterVC?
     
+    //MARK: - VC Lifecycle
     override func viewDidLoad() {
+        // Extract trips from NSUserDefaults
         let defaults = NSUserDefaults.standardUserDefaults()
         if let tripsData = defaults.objectForKey("trips") as? NSData
         {
@@ -48,6 +50,7 @@ class TripsTableViewController: UITableViewController {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // MARK: - Table View Datasource
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -78,10 +81,11 @@ class TripsTableViewController: UITableViewController {
         {
             cell.textLabel?.text = "NA"
         }
-        cell.detailTextLabel?.text = String(format: "%.1f out of 10", trip.driverRating)
+        cell.detailTextLabel?.text = String(format: "%.1f", trip.driverRating)
         return cell
     }
     
+    // MARK: - Segues
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "goToTrip")
         {

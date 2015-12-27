@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Sets navigation bar to custom settings
 func setNav()
 {
     let navAppearence = UINavigationBar.appearance()
@@ -16,7 +17,7 @@ func setNav()
     navAppearence.tintColor = UIColor.whiteColor()
     navAppearence.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 20)!]
     
-    // create background images for the navigation bar
+    // create background images for the navigation bar to make it clear
     let image = UIImage.imageWithColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0))
     
     // customize the appearance of UINavigationBar
@@ -29,6 +30,8 @@ func setNav()
     UIBarButtonItem.appearance().tintColor = UIColor.whiteColor()
 }
 
+
+// Sets navigation bar to default settings
 func revertNav()
 {
     let navAppearence = UINavigationBar.appearance()
@@ -37,7 +40,7 @@ func revertNav()
     navAppearence.tintColor = UIColor.whiteColor()
     navAppearence.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.blackColor(), NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 20)!]
     
-    // create background images for the navigation bar
+    // create background images for the navigation bar to make it white
     let image = UIImage.imageWithColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
     
     // customize the appearance of UINavigationBar
@@ -110,6 +113,7 @@ extension UIImage
 
 extension UIViewController
 {
+    // Adds blur effect to navigation bar
     func addBlurEffect() {
         // Add blur view
         var bounds = self.navigationController?.navigationBar.bounds as CGRect!
@@ -121,12 +125,10 @@ extension UIViewController
         visualEffectView.userInteractionEnabled = false
         
         self.navigationController?.navigationBar.insertSubview(visualEffectView, atIndex: 0)
-        
-        // Here you can add visual effects to any UIView control.
-        // Replace custom view with navigation bar in above code to add effects to custom view.
     }
 }
 
+// Hides the hairline of the uitool bar
 extension UIToolbar {
     
     func hideHairline() {
