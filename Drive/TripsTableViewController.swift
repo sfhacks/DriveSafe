@@ -26,9 +26,14 @@ class TripsTableViewController: UITableViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.hideBottomHairline()
         (presentingViewController as! UINavigationController).navigationBarHidden = true
+        clearsSelectionOnViewWillAppear = true
     }
     
     override func viewWillAppear(animated: Bool) {
+        if let indexPath = tableView.indexPathForSelectedRow
+        {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.tableView.alpha = 1
         })

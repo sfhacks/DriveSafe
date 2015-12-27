@@ -37,12 +37,16 @@ class Trip: NSObject, NSCoding
     {
         data = decoder.decodeObjectForKey("data") as! [CLLocation]
         limits = decoder.decodeObjectForKey("limits") as! [Int]
+        startDate = decoder.decodeObjectForKey("startDate") as! NSDate
+        stopDate = decoder.decodeObjectForKey("stopDate") as! NSDate
     }
     
     func encodeWithCoder(coder: NSCoder)
     {
         coder.encodeObject(data, forKey: "data")
         coder.encodeObject(limits, forKey: "limits")
+        coder.encodeObject(startDate, forKey: "startDate")
+        coder.encodeObject(stopDate, forKey: "stopDate")
     }
     
     
@@ -53,6 +57,7 @@ class Trip: NSObject, NSCoding
         get
         {
             guard (data.count > 0) else {return 0.0}
+            print(startDate)
             return stopDate.timeIntervalSinceDate(startDate)
         }
     }
