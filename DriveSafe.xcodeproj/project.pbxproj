@@ -19,6 +19,7 @@
 		A1E849801C2C9C1C00D37E7C /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E8497F1C2C9C1C00D37E7C /* Trip.swift */; };
 		A1E849821C2F153F00D37E7C /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E849811C2F153F00D37E7C /* TipsViewController.swift */; };
 		A1E849861C2F886D00D37E7C /* SpeedLimitFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E849851C2F886D00D37E7C /* SpeedLimitFinder.swift */; };
+		A1E849881C2F98B500D37E7C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E849871C2F98B500D37E7C /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A1E8497F1C2C9C1C00D37E7C /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		A1E849811C2F153F00D37E7C /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		A1E849851C2F886D00D37E7C /* SpeedLimitFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedLimitFinder.swift; sourceTree = "<group>"; };
+		A1E849871C2F98B500D37E7C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B38EF844DD2A50C1329A1709 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B698B6BA5F70BBE1DB232E52 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E849881C2F98B500D37E7C /* AudioToolbox.framework in Frameworks */,
 				A1571A881C2B3AF300922698 /* CoreLocation.framework in Frameworks */,
 				3A3696A895E8E00C5AAE4D27 /* Pods.framework in Frameworks */,
 			);
@@ -65,6 +68,8 @@
 		575A4BF7FBDE6680D5C04DAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1571A871C2B3AF300922698 /* CoreLocation.framework */,
+				A1E849871C2F98B500D37E7C /* AudioToolbox.framework */,
 				B698B6BA5F70BBE1DB232E52 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -73,7 +78,6 @@
 		A1571A691C2B359200922698 = {
 			isa = PBXGroup;
 			children = (
-				A1571A871C2B3AF300922698 /* CoreLocation.framework */,
 				A1571A741C2B359200922698 /* DriveSafe */,
 				A1571A731C2B359200922698 /* Products */,
 				517B025DC85A34BD1CAE0C3D /* Pods */,

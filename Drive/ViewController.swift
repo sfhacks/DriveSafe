@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import Social
 import AEXML
+import AudioToolbox
 
 class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresenterVC {
     
@@ -166,6 +167,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             }
             self.speedLimitLabel.text! = "Current Speed Limit: \(limit!) MPH"
             self.limits.append(limit!)
+            if let speed = manager.location?.speed
+            {
+                if (speed > Double(limit!))
+                {
+                    AudioServicesPlaySystemSound(1255)
+                }
+            }
         })
         
         data.append(locations[0])
