@@ -8,6 +8,50 @@
 
 import UIKit
 
+func setNav()
+{
+    let navAppearence = UINavigationBar.appearance()
+    navAppearence.translucent = true
+    //navAppearence.barTintColor = UIColor(red: 25/255.0, green: 25/255.0, blue: 25/255.0, alpha: 1.0)
+    navAppearence.tintColor = UIColor.whiteColor()
+    navAppearence.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 20)!]
+    
+    // create background images for the navigation bar
+    let image = UIImage.imageWithColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0))
+    
+    // customize the appearance of UINavigationBar
+    UINavigationBar.appearance().setBackgroundImage(image, forBarMetrics: .Default)
+    UINavigationBar.appearance().setBackgroundImage(image, forBarMetrics: .Compact)
+    UINavigationBar.appearance().barStyle = .Default
+    UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+    
+    UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName : UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
+    UIBarButtonItem.appearance().tintColor = UIColor.whiteColor()
+}
+
+func revertNav()
+{
+    let navAppearence = UINavigationBar.appearance()
+    navAppearence.translucent = true
+    //navAppearence.barTintColor = UIColor(red: 25/255.0, green: 25/255.0, blue: 25/255.0, alpha: 1.0)
+    navAppearence.tintColor = UIColor.whiteColor()
+    navAppearence.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.blackColor(), NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 20)!]
+    
+    // create background images for the navigation bar
+    let image = UIImage.imageWithColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+    
+    // customize the appearance of UINavigationBar
+    UINavigationBar.appearance().setBackgroundImage(image, forBarMetrics: .Default)
+    UINavigationBar.appearance().setBackgroundImage(image, forBarMetrics: .Compact)
+    UINavigationBar.appearance().barStyle = .Default
+    UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+    
+    UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName : UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
+    UIBarButtonItem.appearance().tintColor = UIColor.blackColor()
+    
+}
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,27 +61,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // Override point for customization after application launch.let navAppearence = UINavigationBar.appearance()
-        let navAppearence = UINavigationBar.appearance()
-        navAppearence.translucent = true
-        //navAppearence.barTintColor = UIColor(red: 25/255.0, green: 25/255.0, blue: 25/255.0, alpha: 1.0)
-        navAppearence.tintColor = UIColor.whiteColor()
-        navAppearence.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 20)!]
-        
-        // create background images for the navigation bar
-        let image = UIImage.imageWithColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0))
-        
-        // customize the appearance of UINavigationBar
-        UINavigationBar.appearance().setBackgroundImage(image, forBarMetrics: .Default)
-        UINavigationBar.appearance().setBackgroundImage(image, forBarMetrics: .Compact)
-        UINavigationBar.appearance().barStyle = .Default
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
-        
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName : UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
-        UIBarButtonItem.appearance().tintColor = UIColor.whiteColor()
-        
+        setNav()
         return true
     }
-
+    
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

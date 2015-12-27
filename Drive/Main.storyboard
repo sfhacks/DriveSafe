@@ -194,7 +194,13 @@
                             <outlet property="delegate" destination="T09-ya-7BF" id="Ei2-dJ-LUJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Trip Summary" id="Rmw-JS-7NT"/>
+                    <navigationItem key="navigationItem" title="Trip Summary" id="Rmw-JS-7NT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="6gl-fm-DRG">
+                            <connections>
+                                <action selector="sendEmail:" destination="T09-ya-7BF" id="l8e-GD-gmE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVS-th-ndR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

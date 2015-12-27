@@ -8,13 +8,14 @@
 
 import UIKit
 import CoreLocation
+import MessageUI
 
 protocol ModalPresenterVC
 {
     func didDismiss()
 }
 
-class TripSummaryTableViewController: UITableViewController {
+class TripSummaryTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     var info = ["Average Speed", "Time Elapsed", "Driver Rating", "Number of offenses"]
     var trip: Trip!
     var delegate: ModalPresenterVC?
@@ -33,6 +34,20 @@ class TripSummaryTableViewController: UITableViewController {
         }
     }
 
+    @IBAction func sendEmail(sender: UIBarButtonItem) {
+        revertNav()
+        var vc = MFMailComposeViewController()
+        vc.view.backgroundColor = UIColor.clearColor()
+        vc.mailComposeDelegate = self
+        vc.setSubject("My Driver Rating")
+        vc.setMessageBody("On my latest drive, I got a driver rating of \(trip.driverRating) out of 10!", isHTML: false)
+        presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        setNav()
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
