@@ -41,36 +41,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
         
         startStopButton.layer.cornerRadius = startStopButton.bounds.width/2
         startStopButton.clipsToBounds = true
-    }
-    
-    func generateURL(location: CLLocation) -> NSURL
-    {
-        let lat = location.coordinate.latitude
-        let long = location.coordinate.longitude
-        let distance = 0.0020
-        let left = long - distance
-        let bottom = lat - distance
-        let right = long + distance
-        let top = lat + distance
         
-        return NSURL(string: "https://www.openstreetmap.org/api/0.6/map?bbox=\(left),\(bottom),\(right),\(top)")!
-    }
-    
-    func performGetRequest(targetURL: NSURL!, completion: (data: NSData?, HTTPStatusCode: Int, error: NSError?) -> Void) {
-        let request = NSMutableURLRequest(URL: targetURL)
-        request.HTTPMethod = "GET"
-        
-        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        
-        let session = NSURLSession(configuration: sessionConfiguration)
-        
-        let task = session.dataTaskWithRequest(request, completionHandler: { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                completion(data: data, HTTPStatusCode: (response as! NSHTTPURLResponse).statusCode, error: error)
-            })
-        })
-        
-        task.resume()
+        SpeedLimitFinder.getSpeedLimit(CLLocationCoordinate2D(latitude: 37.360214, longitude: -122.148528)) { (limit) -> Void in
+            print(limit)
+        }
     }
     
     
@@ -185,101 +159,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             mphLabel.text = "\(round(2.2374*locations[0].speed)) MPH"
         }
         
-        let url = generateURL(manager.location!)
-        print(url)
-        performGetRequest(url, completion: { (data, HTTPStatusCode, error) -> Void in
-            if let data = data
+        SpeedLimitFinder.getSpeedLimit(locations[0].coordinate, completion: { (var limit) -> Void in
+            if limit == nil
             {
-                self.getSpeedLimit(data)
+                limit = 40
             }
+            self.speedLimitLabel.text! = "Current Speed Limit: \(limit!) MPH"
+            self.limits.append(limit!)
         })
         
         data.append(locations[0])
     }
     
-    func getSpeedLimit(data: NSData)
-    {
-        do
-        {
-            let xml = try AEXMLDocument(xmlData: data)
-            var limit = -5
-            print(xml.stringValue)
-            if let ways = xml.root["way"].all
-            {
-                for way in ways
-                {
-                    let speedLimit = getSpeedLimitOfWay(way)
-                    if speedLimit > limit
-                    {
-                        limit = speedLimit
-                    }
-                }
-            }
-            print("Speed limit is currently \(limit) MPH")
-            
-            speedLimitLabel.text = "Speed Limit: \(limit) MPH"
-            limits.append(limit)
-        }
-        catch {
-            print(error)
-        }
-        
-    }
-    
-    func getSpeedLimitOfWay(way: AEXMLElement) -> Int
-    {
-        var limit = 0
-        if let speedTags = way["tag"].allWithAttributes(["k": "maxspeed"])
-        {
-            for speedTag in speedTags
-            {
-                if let value = speedTag.attributes["v"]
-                {
-                    if let speed = Int(value.characters.split{$0 == " "}.map(String.init)[0])
-                    {
-                        if (speed > limit)
-                        {
-                            limit = speed
-                        }
-                    }
-                }
-            }
-        }
-        
-        if (limit > 0)
-        {
-            return limit
-        }
-        
-        if let typeTags = way["tag"].allWithAttributes(["k": "highway"])
-        {
-            for typeTag in typeTags
-            {
-                if let roadType = typeTag.attributes["k"]
-                {
-                    switch(roadType)
-                    {
-                    case "motorway":
-                        limit = 60
-                    case "trunk":
-                        limit = 50
-                    case "primary":
-                        limit = 35
-                    case "secondary":
-                        limit = 35
-                    case "tertiary":
-                        limit = 35
-                    case "residential":
-                        limit = 25
-                    default:
-                        limit = 30
-                    }
-                }
-            }
-        }
-        
-        return limit
-    }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Location manager failed!")
