@@ -21,7 +21,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     
     // Used for animation
     @IBOutlet weak var buttonHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var mphHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var speedLimitHeightContraint: NSLayoutConstraint!
     
     var manager: CLLocationManager!
     
@@ -37,8 +37,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
-        mphLabel.alpha = 0.0
-        mphHeightConstraint.constant = -50
+        speedLimitLabel.alpha = 0.0
+        speedLimitHeightContraint.constant = -50
         super.viewDidLoad()
         navigationController?.navigationBar.hideBottomHairline()
 
@@ -88,10 +88,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
         print("Adding new location data point \(locations[0].speed)")
         if (locations[0].speed < 0)
         {
-            mphLabel.text = "\(0) MPH"
+            mphLabel.text = "Your Speed: \(0) MPH"
         }else
         {
-            mphLabel.text = "\(round(2.2374*locations[0].speed)) MPH"
+            mphLabel.text = "Your Speed: \(round(2.2374*locations[0].speed)) MPH"
         }
         
         SpeedLimitFinder.getSpeedLimit(locations[0].coordinate, completion: { (var limit) -> Void in
@@ -99,12 +99,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             {
                 limit = 40 // Default speed limit
             }
-            limit = -6
-            self.speedLimitLabel.text! = "Speed Limit: \(limit!) MPH - \(self.data.count)"
+            self.speedLimitLabel.text! = "\(limit!) MPH"
             self.limits.append(limit!)
             if let speed = manager.location?.speed
             {
-                if (speed > Double(limit!+5))
+                if (2.2374 * speed > Double(limit!+5))
                 {
                     if (self.wasSpeeding == false)
                     {
@@ -142,27 +141,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             startStopButton.setTitle("Stop", forState: UIControlState.Normal)
             startStopButton.backgroundColor = UIColor(red: 223/255, green: 0, blue: 0, alpha: 0.8)
             buttonHeightConstraint.constant = view.bounds.height/3 - startStopButton.bounds.height/2
-            mphHeightConstraint.constant = 0
-            mphLabel.text = "\(0) MPH"
-
+            speedLimitHeightContraint.constant = 0
+            mphLabel.text = "Current Speed: \(0) MPH"
+            speedLimitLabel.text = "0 MPH"
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.view.layoutIfNeeded()
-                self.mphLabel.alpha = 1.0
+                self.speedLimitLabel.alpha = 1.0
             })
             manager.startUpdatingLocation()
             startDate = NSDate()
         }else
         {
             stopDate = NSDate()
+            speedLimitLabel.text = "0 MPH"
             manager.stopUpdatingLocation()
             startStopButton.setTitle("Start Drive", forState: UIControlState.Normal)
             startStopButton.setTitle("Start Drive", forState: UIControlState.Normal)
             startStopButton.backgroundColor = UIColor(red: 0/255, green: 198/255, blue: 0/255, alpha: 1.0)
             buttonHeightConstraint.constant = 0
-            mphHeightConstraint.constant = -50
+            speedLimitHeightContraint.constant = -50
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.view.layoutIfNeeded()
-                self.mphLabel.alpha = 0.0
+                self.speedLimitLabel.alpha = 0.0
             })
             isDriving = false
             

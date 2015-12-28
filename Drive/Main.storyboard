@@ -22,7 +22,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="traffic" translatesAutoresizingMaskIntoConstraints="NO" id="YGs-JC-XZI">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Speed Limit: 0 MPH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oA-Uv-5eE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Speed: 0 MPH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oA-Uv-5eE">
                                 <rect key="frame" x="0.0" y="538" width="600" height="62"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.58511929898648651" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -82,10 +82,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="buttonHeightConstraint" destination="ch1-9u-Jeb" id="PCq-dd-9B9"/>
-                        <outlet property="mphHeightConstraint" destination="MR0-ux-lZV" id="p4B-pU-rsj"/>
-                        <outlet property="mphLabel" destination="3eE-gg-C84" id="emA-kS-CCz"/>
-                        <outlet property="speedLimitLabel" destination="3oA-Uv-5eE" id="gAa-qd-jp8"/>
+                        <outlet property="buttonHeightConstraint" destination="ch1-9u-Jeb" id="KA9-Wz-Qxr"/>
+                        <outlet property="mphLabel" destination="3oA-Uv-5eE" id="Bav-R3-WMa"/>
+                        <outlet property="speedLimitHeightContraint" destination="MR0-ux-lZV" id="yks-aI-xrU"/>
+                        <outlet property="speedLimitLabel" destination="3eE-gg-C84" id="uum-u6-BaX"/>
                         <outlet property="startStopButton" destination="jiW-YJ-4XE" id="Jrc-MB-0tb"/>
                         <segue destination="Ryj-ml-AyC" kind="presentation" identifier="showTripData" modalPresentationStyle="overCurrentContext" id="ZSD-I0-GOy"/>
                     </connections>
@@ -338,6 +338,6 @@
         <image name="traffic" width="5456" height="3632"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g1f-sO-VUF"/>
+        <segue reference="oep-Kd-Jeg"/>
     </inferredMetricsTieBreakers>
 </document>
