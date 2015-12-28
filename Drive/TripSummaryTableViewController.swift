@@ -34,6 +34,13 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
         {
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "doneButtonPressed:")
         }
+        
+        print("****DEBUG LOG****")
+        print("\(trip.data.count) locations recorded, \(trip.limits.count) speed limits recorded")
+        for (var i = 0; i < min(trip.data.count, trip.limits.count); i++)
+        {
+            print("\(i). Recorded: \(2.2374 * trip.data[i].speed)    Limit: \(trip.limits[i])")
+        }
     }
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
@@ -84,14 +91,13 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
         
         switch info[indexPath.row] {
         case "Time Elapsed":
-            print(trip.timeLapsed)
             cell.detailTextLabel?.text = String(format: "%.1f minutes", trip.timeLapsed/60.0)
         case "Average Speed":
             cell.detailTextLabel?.text = String(format: "%.1f MPH", 2.2374 * trip.averageSpeed)
         case "Driver Rating":
             cell.detailTextLabel?.text = String(format: "%.1f out of 10", trip.driverRating)
         case "Number of offenses":
-            cell.detailTextLabel?.text = String(format: "%d", trip.numberOfOffenses)
+            cell.detailTextLabel?.text = String(format: "%d/%d", trip.numberOfOffenses, trip.totalDataPoints)
         default:
             break
         }

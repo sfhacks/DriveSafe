@@ -29,6 +29,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     var limits: [Int] = [] // Array of speed limits
     
     var isDriving: Bool = false
+    var wasSpeeding: Bool = false
     
     // Stores start and stop dates of current drive
     var startDate: NSDate!
@@ -82,8 +83,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard (NSDate().timeIntervalSinceDate(startDate) > 5)else{return}
         
-        print("Adding new location data point")
+        print("Adding new location data point \(locations[0].speed)")
         if (locations[0].speed < 0)
         {
             mphLabel.text = "\(0) MPH"
@@ -97,13 +99,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             {
                 limit = 40 // Default speed limit
             }
-            self.speedLimitLabel.text! = "Current Speed Limit: \(limit!) MPH"
+            limit = -6
+            self.speedLimitLabel.text! = "Speed Limit: \(limit!) MPH - \(self.data.count)"
             self.limits.append(limit!)
             if let speed = manager.location?.speed
             {
                 if (speed > Double(limit!+5))
                 {
-                    AudioServicesPlaySystemSound(1255) // Play beep if user is over the speed limit
+                    if (self.wasSpeeding == false)
+                    {
+                        print("Beeping")
+                        AudioServicesPlaySystemSound(1255) // Play beep if user is over the speed limit
+                    }
+                    self.wasSpeeding = true
+                }else
+                {
+                    self.wasSpeeding = false
                 }
             }
         })

@@ -16,15 +16,6 @@ class Trip: NSObject, NSCoding
     var stopDate: NSDate!
     
     var data: [CLLocation] // Array of locations
-    {
-        didSet
-        {
-            for component in data
-            {
-                print(component)
-            }
-        }
-    }
     var limits: [Int] // Array of speed limits
     
     var timeLapsed: Double
@@ -32,7 +23,6 @@ class Trip: NSObject, NSCoding
         get
         {
             guard (data.count > 0) else {return 0.0}
-            print(startDate)
             return stopDate.timeIntervalSinceDate(startDate)
         }
     }
@@ -45,7 +35,7 @@ class Trip: NSObject, NSCoding
             var total: CLLocationSpeed = 0
             for location in data
             {
-                total += abs(location.speed)
+                total += (location.speed > 0) ? location.speed : 0
             }
             return total/Double(data.count)
         }
@@ -57,13 +47,19 @@ class Trip: NSObject, NSCoding
             var count = 0
             for (var i = 0; i < min(data.count, limits.count); i++)
             {
-                if (data[i].speed > Double(limits[i]))
+                if (2.2374 * data[i].speed > Double(limits[i]))
                 {
                     count++;
                 }
             }
-            
             return count
+        }
+    }
+    
+    var totalDataPoints: Int
+    {
+        get{
+            return min(data.count, limits.count)
         }
     }
     
@@ -72,7 +68,7 @@ class Trip: NSObject, NSCoding
         get
         {
             guard (data.count > 0) else {return 0.0}
-            return 10-Double(Double(numberOfOffenses)/Double(data.count))*10
+            return 10-(Double(numberOfOffenses)/Double(data.count))*10
         }
     }
     
