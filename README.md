@@ -10,19 +10,17 @@ Additionaly, the app has a tips section to encourage good driving habits.
 
 #Tools Used
 
-Xcode - Platform for coding the app
-Sketch - Designing the application logo
-Nominatim (http://wiki.openstreetmap.org/wiki/Nominatim) - Reverse geocoding to find streets from given coordinates
-Open Street Map (OSM) - Finding speed limits for streets
-AEXML (https://github.com/tadija/AEXML) - XML Parsing
-Core Location - Getting location updates, speed of the phone, etc
-Swift - programming language used
+Xcode - Platform for coding the app <br />
+Sketch - Designing the application logo <br />
+Nominatim (http://wiki.openstreetmap.org/wiki/Nominatim) - Reverse geocoding to find streets from given coordinates <br />
+Open Street Map (OSM) - Finding speed limits for streets <br />
+AEXML (https://github.com/tadija/AEXML) - XML Parsing <br />
+Core Location - Getting location updates, speed of the phone, etc <br />
+Swift - programming language used <br />
 
 #Design
 
-![Alt text](https://files.slack.com/files-pri/T0CL3NSMC-F0HC43EGK/slack_for_ios_upload.png "Home Screen")
-https://files.slack.com/files-pri/T0CL3NSMC-F0HC3JU57/simulator_screen_shot_dec_26__2015__11.08.01_am.png
-https://files.slack.com/files-pri/T0CL3NSMC-F0HC42K98/simulator_screen_shot_dec_26__2015__11.08.11_am.png
+![alt tag](https://files.slack.com/files-pri/T0CL3NSMC-F0H9MDZQW/simulator_screen_shot_dec_23__2015__8.06.57_pm.png)
 
 
 #Disclaimer
