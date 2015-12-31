@@ -1,6 +1,29 @@
-# Drive
+# DriveSafe
 
 Driving made Safe. Made for 2015-2016 Congressional App Challenge
+
+#Description
+
+This DriveSafe application was coded in Swift using the Xcode platform for iOS.
+It's purpose is to facilitate driver safety by increasing the user's awarness about how fast they are going and the speed limit on the road that they are on. We used the Open Street Map API to find the speed limit of each street and Apple's Core Location kit to track how fast the user is going. The application prompts the user to enable "Do not Disturb" mode while driving and it also tweets #X (a tool that teens and others can use to pause a text or social conversation before driving). Also, the app beeps if the user is going 5mph over the speed limit. After the drive, it compiles the data into a driver rating which can then be sent to parents or guardians. 
+Additionaly, the app has a tips section to encourage good driving habits.
+
+#Tools Used
+
+Xcode - Platform for coding the app
+Sketch - Designing the application logo
+Nominatim (http://wiki.openstreetmap.org/wiki/Nominatim) - Reverse geocoding to find streets from given coordinates
+Open Street Map (OSM) - Finding speed limits for streets
+AEXML (https://github.com/tadija/AEXML) - XML Parsing
+Core Location - Getting location updates, speed of the phone, etc
+Swift - programming language used
+
+#Design
+
+https://files.slack.com/files-pri/T0CL3NSMC-F0HC43EGK/slack_for_ios_upload.png
+https://files.slack.com/files-pri/T0CL3NSMC-F0HC3JU57/simulator_screen_shot_dec_26__2015__11.08.01_am.png
+https://files.slack.com/files-pri/T0CL3NSMC-F0HC42K98/simulator_screen_shot_dec_26__2015__11.08.11_am.png
+
 
 #Disclaimer
 
