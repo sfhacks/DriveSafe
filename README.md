@@ -20,7 +20,7 @@ Swift - programming language used
 
 #Design
 
-https://files.slack.com/files-pri/T0CL3NSMC-F0HC43EGK/slack_for_ios_upload.png
+![Alt text](https://files.slack.com/files-pri/T0CL3NSMC-F0HC43EGK/slack_for_ios_upload.png "Home Screen")
 https://files.slack.com/files-pri/T0CL3NSMC-F0HC3JU57/simulator_screen_shot_dec_26__2015__11.08.01_am.png
 https://files.slack.com/files-pri/T0CL3NSMC-F0HC42K98/simulator_screen_shot_dec_26__2015__11.08.11_am.png
 
