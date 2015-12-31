@@ -47,6 +47,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
         // Make button a circle
         startStopButton.layer.cornerRadius = startStopButton.bounds.width/2
         startStopButton.clipsToBounds = true
+        
+        var defaults = NSUserDefaults.standardUserDefaults()
+        if (defaults.objectForKey("legal") == nil)
+        {
+            performSegueWithIdentifier("goToLegal", sender: nil)
+        }
     }
     
     // MARK: - Core Location
@@ -205,12 +211,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     var blur: UIVisualEffectView!
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
-        blur.frame = CGRect(x: view.bounds.origin.x, y: view.bounds.origin.y-64, width: view.bounds.width, height: view.bounds.height+64)
-        blur.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
-        view.addSubview(blur)
-        
+        if (segue.identifier != "goToLegal")
+        {
+            blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
+            blur.frame = CGRect(x: view.bounds.origin.x, y: view.bounds.origin.y-64, width: view.bounds.width, height: view.bounds.height+64)
+            blur.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
+            view.addSubview(blur)
+
+        }
         if (segue.identifier == "showTripData")
         {
             let nav = segue.destinationViewController as! UINavigationController

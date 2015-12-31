@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A3696A895E8E00C5AAE4D27 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B698B6BA5F70BBE1DB232E52 /* Pods.framework */; };
+		A1338A3D1C34C45200CE23AF /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1338A3C1C34C45200CE23AF /* LegalViewController.swift */; };
 		A1571A761C2B359200922698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1571A751C2B359200922698 /* AppDelegate.swift */; };
 		A1571A781C2B359200922698 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1571A771C2B359200922698 /* ViewController.swift */; };
 		A1571A7D1C2B359300922698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1571A7C1C2B359300922698 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		067EC4313145E732104B0CD0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A1338A3C1C34C45200CE23AF /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		A1571A721C2B359200922698 /* DriveSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1571A751C2B359200922698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1571A771C2B359200922698 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				A1A283D91C2C6097005DBC41 /* TripsTableViewController.swift */,
 				A1CD13191C2B72C800AF2804 /* TripSummaryTableViewController.swift */,
 				A1571A771C2B359200922698 /* ViewController.swift */,
+				A1338A3C1C34C45200CE23AF /* LegalViewController.swift */,
 				A1571A7C1C2B359300922698 /* Assets.xcassets */,
 				A1571A7E1C2B359300922698 /* LaunchScreen.storyboard */,
 				A1571A811C2B359300922698 /* Info.plist */,
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1338A3D1C34C45200CE23AF /* LegalViewController.swift in Sources */,
 				A1E849801C2C9C1C00D37E7C /* Trip.swift in Sources */,
 				A1E849861C2F886D00D37E7C /* SpeedLimitFinder.swift in Sources */,
 				A1571A781C2B359200922698 /* ViewController.swift in Sources */,

@@ -50,7 +50,7 @@ func revertNav()
     UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
     
     UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName : UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
-    UIBarButtonItem.appearance().tintColor = UIColor.blackColor()
+    UIBarButtonItem.appearance().tintColor = UIColor(red: 10/255, green: 95/255, blue: 254/255, alpha: 1.0)
     
 }
 
