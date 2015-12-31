@@ -20,7 +20,7 @@ Swift - programming language used <br />
 
 #Design
 
-![alt tag](https://files.slack.com/files-pri/T0CL3NSMC-F0H9MDZQW/simulator_screen_shot_dec_23__2015__8.06.57_pm.png)
+![alt tag](https://lh3.googleusercontent.com/-tWkrF6LozSc/VoR3yluyvgI/AAAAAAAAAMk/SHyoNzxq0zc/w852-h1514/simulator_screen_shot_dec_23__2015__8.06.57_pm_720.png)
 
 
 #Disclaimer
