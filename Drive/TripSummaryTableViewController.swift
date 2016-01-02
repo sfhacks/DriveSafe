@@ -55,7 +55,7 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
     // MARK: - Email Sending
     @IBAction func sendEmail(sender: UIBarButtonItem) {
         revertNav()
-        var vc = MFMailComposeViewController()
+        let vc = MFMailComposeViewController()
         vc.view.backgroundColor = UIColor.clearColor()
         vc.mailComposeDelegate = self
         vc.setSubject("My Driver Rating")

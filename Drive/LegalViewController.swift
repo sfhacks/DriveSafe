@@ -14,7 +14,7 @@ class LegalViewController: UIViewController {
     }
     
     @IBAction func agree(sender: AnyObject) {
-        var defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(true, forKey: "legal")
         defaults.synchronize()
         setNav()
