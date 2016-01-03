@@ -48,7 +48,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
         startStopButton.layer.cornerRadius = startStopButton.bounds.width/2
         startStopButton.clipsToBounds = true
         
-        var defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.standardUserDefaults()
         if (defaults.objectForKey("legal") == nil)
         {
             performSegueWithIdentifier("goToLegal", sender: nil)
