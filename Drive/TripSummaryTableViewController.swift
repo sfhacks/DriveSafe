@@ -18,12 +18,15 @@ protocol ModalPresenterVC
 }
 
 class TripSummaryTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+    @IBOutlet weak var driverRatingCircle: UILabel!
+    
     // MARK: - Properties
     var info = ["Average Speed", "Time Elapsed", "Driver Rating", "Number of offenses"]
     var trip: Trip!
     var delegate: ModalPresenterVC?
     var notModal: Bool = false // If this is true, the view controller was pushed by a navigation controller. If false, it was modally presented
     
+    var colors = [UIColor.redColor(), UIColor.orangeColor(), UIColor.yellowColor(), UIColor.greenColor()]
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +44,13 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
         {
             print("\(i). Recorded: \(2.2374 * trip.data[i].speed)    Limit: \(trip.limits[i])")
         }
+        
+        driverRatingCircle.alpha = 0.5
+        driverRatingCircle.layer.borderColor = colors[Int(round(trip.driverRating/2.5))].CGColor
+        driverRatingCircle.layer.borderWidth = 8.0
+        driverRatingCircle.layer.cornerRadius = driverRatingCircle.bounds.width/2
+        driverRatingCircle.clipsToBounds = true
+        driverRatingCircle.text = "\(trip.driverRating)"
     }
     
     @IBAction func doneButtonPressed(sender: AnyObject) {

@@ -9,6 +9,8 @@
 import UIKit
 
 class TripsTableViewController: UITableViewController {
+    
+    
     var trips: [Trip]!
     var delegate: ModalPresenterVC?
     

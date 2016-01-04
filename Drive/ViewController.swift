@@ -137,6 +137,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     @IBAction func startStopPressed() {
         if isDriving == false
         {
+            navigationController?.navigationBarHidden = true
             let alert = UIAlertController(title: "Do Not Disturb", message: "Make sure to turn on Do Not Disturb mode on your iPhone to block calls and notifications so you can stay safe on the road", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alert) -> Void in
                 self.tweet()
@@ -158,6 +159,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             startDate = NSDate()
         }else
         {
+            navigationController?.navigationBarHidden = false
             stopDate = NSDate()
             speedLimitLabel.text = "0 MPH"
             manager.stopUpdatingLocation()

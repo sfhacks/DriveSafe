@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yVk-aZ-anY">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Legal-->
+        <scene sceneID="V2x-3v-rzx">
+            <objects>
+                <viewController id="3M9-A5-NWC" customClass="LegalViewController" customModule="DriveSafe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pgP-1L-TK4"/>
+                        <viewControllerLayoutGuide type="bottom" id="vdG-lL-MK7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="osg-a1-EiE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="q5B-LV-BdK">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">
+The usage of this application is not intended to prevent and/or detect unsafe driving by the user or associated parties. This application’s purpose is only to facilitate and encourage the driver’s road safety in conjunction with any other tools or apps that the driver may be using. This application is not meant to substitute your knowledge of road safety rules and regulations, and other stipulations that your legal driving licenses may require. As a road user, you are still liable for any accidents, deaths, injuries or damage that occur while, during or before usage of this application on the road. Under no circumstances are the makers of this application or their associated organization(s) liable for any grievances that occur during the usage of this application. This application is still under development and may be refined over time. It is important to note that the functioning of this application relies on 3rd party data and information, over which we have no control and do not warrant the accuracy or necessary updates of this information or data provided. Information presented during the usage of this application may be subject to inconsistencies and/or error. Please drive safely and obey traffic rules. Any electronic interferences, cellular outages and/or restrictions, internet connectivity issues, bugs, improper coding updates, etc., may render this application to be ineffective or inaccurate. Watching this screen while the vehicle is in motion may lead to a serious accident and in some driving jurisdictions may be illegal. It must be noted that this application is not designed for all driving jurisdictions and/or countries. Please make safe decisions while on the road, and the usage of this application is at the user's own discretion. Upon usage of this application, the user has hereby agreed to all the terms and liabilities presented above.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="q5B-LV-BdK" secondAttribute="trailing" id="6PA-bT-TA2"/>
+                            <constraint firstItem="vdG-lL-MK7" firstAttribute="top" secondItem="q5B-LV-BdK" secondAttribute="bottom" id="7Hc-JI-b2U"/>
+                            <constraint firstItem="q5B-LV-BdK" firstAttribute="leading" secondItem="osg-a1-EiE" secondAttribute="leading" id="B6T-qz-Swb"/>
+                            <constraint firstItem="q5B-LV-BdK" firstAttribute="top" secondItem="pgP-1L-TK4" secondAttribute="bottom" id="DAc-gL-ypk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Legal" id="tVH-FW-A6Q">
+                        <barButtonItem key="rightBarButtonItem" title="Agree" id="8PU-6h-lnE">
+                            <connections>
+                                <action selector="agree:" destination="3M9-A5-NWC" id="qFs-q7-tqr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MfO-Ng-zoi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49" y="994"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KzM-OS-cNM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yVk-aZ-anY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Osa-aI-IeR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3M9-A5-NWC" kind="relationship" relationship="rootViewController" id="C64-Nf-Voi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a22-QZ-NTy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-629" y="796"/>
+        </scene>
+    </scenes>
+</document>

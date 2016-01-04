@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3A3696A895E8E00C5AAE4D27 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B698B6BA5F70BBE1DB232E52 /* Pods.framework */; };
 		A1338A3D1C34C45200CE23AF /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1338A3C1C34C45200CE23AF /* LegalViewController.swift */; };
+		A14F8F191C3A055A0077646A /* Tips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14F8F181C3A055A0077646A /* Tips.storyboard */; };
+		A14F8F1B1C3A05970077646A /* Legal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14F8F1A1C3A05970077646A /* Legal.storyboard */; };
+		A14F8F1D1C3A05B30077646A /* Your Trips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14F8F1C1C3A05B30077646A /* Your Trips.storyboard */; };
+		A14F8F1F1C3A05E80077646A /* Trip Summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14F8F1E1C3A05E80077646A /* Trip Summary.storyboard */; };
 		A1571A761C2B359200922698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1571A751C2B359200922698 /* AppDelegate.swift */; };
 		A1571A781C2B359200922698 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1571A771C2B359200922698 /* ViewController.swift */; };
 		A1571A7D1C2B359300922698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1571A7C1C2B359300922698 /* Assets.xcassets */; };
@@ -26,6 +30,10 @@
 /* Begin PBXFileReference section */
 		067EC4313145E732104B0CD0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A1338A3C1C34C45200CE23AF /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
+		A14F8F181C3A055A0077646A /* Tips.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tips.storyboard; sourceTree = "<group>"; };
+		A14F8F1A1C3A05970077646A /* Legal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Legal.storyboard; sourceTree = "<group>"; };
+		A14F8F1C1C3A05B30077646A /* Your Trips.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Your Trips.storyboard"; sourceTree = "<group>"; };
+		A14F8F1E1C3A05E80077646A /* Trip Summary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Trip Summary.storyboard"; sourceTree = "<group>"; };
 		A1571A721C2B359200922698 /* DriveSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1571A751C2B359200922698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1571A771C2B359200922698 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +85,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A14F8F201C3A05F20077646A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A1CD13171C2B6BD100AF2804 /* Main.storyboard */,
+				A14F8F1E1C3A05E80077646A /* Trip Summary.storyboard */,
+				A14F8F1C1C3A05B30077646A /* Your Trips.storyboard */,
+				A14F8F1A1C3A05970077646A /* Legal.storyboard */,
+				A14F8F181C3A055A0077646A /* Tips.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		A1571A691C2B359200922698 = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +120,7 @@
 			children = (
 				A1E849851C2F886D00D37E7C /* SpeedLimitFinder.swift */,
 				A1571A751C2B359200922698 /* AppDelegate.swift */,
-				A1CD13171C2B6BD100AF2804 /* Main.storyboard */,
+				A14F8F201C3A05F20077646A /* Storyboards */,
 				A1E849811C2F153F00D37E7C /* TipsViewController.swift */,
 				A1E8497F1C2C9C1C00D37E7C /* Trip.swift */,
 				A1A283D91C2C6097005DBC41 /* TripsTableViewController.swift */,
@@ -183,7 +203,11 @@
 			files = (
 				A1CD13181C2B6BD100AF2804 /* Main.storyboard in Resources */,
 				A1571A801C2B359300922698 /* LaunchScreen.storyboard in Resources */,
+				A14F8F1B1C3A05970077646A /* Legal.storyboard in Resources */,
+				A14F8F191C3A055A0077646A /* Tips.storyboard in Resources */,
 				A1571A7D1C2B359300922698 /* Assets.xcassets in Resources */,
+				A14F8F1D1C3A05B30077646A /* Your Trips.storyboard in Resources */,
+				A14F8F1F1C3A05E80077646A /* Trip Summary.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
