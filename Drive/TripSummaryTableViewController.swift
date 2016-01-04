@@ -53,7 +53,7 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
         
         for (var i = 0; i < min(trip.data.count, trip.limits.count); i++)
         {
-            speeds.append(ChartDataEntry(value: trip.data[i].speed>0 ? trip.data[i].speed : 0 , xIndex: i))
+            speeds.append(ChartDataEntry(value: trip.data[i].speed>0 ? 2.2374*trip.data[i].speed : 0 , xIndex: i))
             limits.append(ChartDataEntry(value: Double(trip.limits[i]), xIndex: i))
             xVals.append(i)
         }

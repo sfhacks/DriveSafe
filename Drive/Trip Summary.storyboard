@@ -19,7 +19,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tAt-UW-MU1" customClass="LineChartView" customModule="Charts">
-                                    <rect key="frame" x="13" y="8" width="579" height="235"/>
+                                    <rect key="frame" x="13" y="18" width="579" height="225"/>
                                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </subviews>
@@ -27,7 +27,7 @@
                             <constraints>
                                 <constraint firstItem="tAt-UW-MU1" firstAttribute="bottom" secondItem="uXq-Ih-KDw" secondAttribute="bottomMargin" id="7v8-Ug-Isa"/>
                                 <constraint firstItem="tAt-UW-MU1" firstAttribute="trailing" secondItem="uXq-Ih-KDw" secondAttribute="trailingMargin" id="Jr6-En-sFJ"/>
-                                <constraint firstItem="tAt-UW-MU1" firstAttribute="top" secondItem="uXq-Ih-KDw" secondAttribute="topMargin" id="Vst-c1-ddy"/>
+                                <constraint firstItem="tAt-UW-MU1" firstAttribute="top" secondItem="uXq-Ih-KDw" secondAttribute="topMargin" constant="10" id="Vst-c1-ddy"/>
                                 <constraint firstItem="tAt-UW-MU1" firstAttribute="leading" secondItem="uXq-Ih-KDw" secondAttribute="leadingMargin" constant="5" id="ZM0-Be-08i"/>
                             </constraints>
                         </view>
