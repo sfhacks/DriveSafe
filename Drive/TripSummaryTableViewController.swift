@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import MessageUI
+import Charts
 
 // didDismiss is called when a modalally presented view controller dismisses itself
 // This protocol is used to allow ViewController.swift to be notified so it can remove the blur when needed
@@ -18,7 +19,8 @@ protocol ModalPresenterVC
 }
 
 class TripSummaryTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
-    @IBOutlet weak var driverRatingCircle: UILabel!
+    
+    @IBOutlet weak var chart: LineChartView!
     
     // MARK: - Properties
     var info = ["Average Speed", "Time Elapsed", "Driver Rating", "Number of offenses"]
@@ -45,12 +47,56 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
             print("\(i). Recorded: \(2.2374 * trip.data[i].speed)    Limit: \(trip.limits[i])")
         }
         
-        driverRatingCircle.alpha = 0.5
-        driverRatingCircle.layer.borderColor = colors[Int(round(trip.driverRating/2.5))].CGColor
-        driverRatingCircle.layer.borderWidth = 8.0
-        driverRatingCircle.layer.cornerRadius = driverRatingCircle.bounds.width/2
-        driverRatingCircle.clipsToBounds = true
-        driverRatingCircle.text = "\(trip.driverRating)"
+        var speeds: [ChartDataEntry] = []
+        var limits: [ChartDataEntry] = []
+        var xVals: [Int] = []
+        
+        for (var i = 0; i < min(trip.data.count, trip.limits.count); i++)
+        {
+            speeds.append(ChartDataEntry(value: trip.data[i].speed>0 ? trip.data[i].speed : 0 , xIndex: i))
+            limits.append(ChartDataEntry(value: Double(trip.limits[i]), xIndex: i))
+            xVals.append(i)
+        }
+        
+        let set1 = LineChartDataSet(yVals: speeds, label: "Your Speed")
+        set1.drawCubicEnabled = true
+        set1.drawValuesEnabled = false
+        set1.drawCirclesEnabled = false
+        set1.lineWidth = 1.0
+
+        let set2 = LineChartDataSet(yVals: limits, label: "Speed Limit")
+        set2.drawCubicEnabled = true
+        set2.drawValuesEnabled = false
+        set2.drawCirclesEnabled = false
+        set2.setColor(UIColor.redColor())
+        set2.lineWidth = 1.0
+        
+        let data = LineChartData(xVals: xVals, dataSets: [set1, set2])
+        chart.data = data
+        
+        
+        chart.legend.textColor = UIColor.whiteColor()
+        chart.descriptionText = ""
+        chart.drawGridBackgroundEnabled = false
+        
+        chart.xAxis.drawLabelsEnabled = false
+        chart.xAxis.drawGridLinesEnabled = false
+        chart.xAxis.drawAxisLineEnabled = false
+        
+        let rightAxis = chart.rightAxis
+        rightAxis.drawLabelsEnabled = false
+        rightAxis.drawGridLinesEnabled = false
+        rightAxis.drawAxisLineEnabled = false
+        
+        let leftAxis = chart.leftAxis
+        leftAxis.labelTextColor = UIColor.whiteColor()
+        leftAxis.xOffset = 10
+        leftAxis.drawGridLinesEnabled = false
+        leftAxis.drawAxisLineEnabled = false
+
+        
+        chart.userInteractionEnabled = false
+        chart.noDataText = "No Data Availible"
     }
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
