@@ -76,15 +76,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdB-7G-Ud3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2333" y="974"/>
+            <point key="canvasLocation" x="2397" y="806"/>
         </scene>
         <!--UITableViewController-T09-ya-7BF-->
         <scene sceneID="o3o-Gj-3C2">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UITableViewController-T09-ya-7BF" id="eWO-xC-5Wy" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Trip Summary" referencedIdentifier="UITableViewController-T09-ya-7BF" id="eWO-xC-5Wy" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V5t-4A-bnu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1537" y="26"/>
+            <point key="canvasLocation" x="3654.5" y="806"/>
         </scene>
     </scenes>
 </document>

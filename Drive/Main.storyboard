@@ -145,14 +145,6 @@
             </objects>
             <point key="canvasLocation" x="775" y="47"/>
         </scene>
-        <!--UITableViewController-T09-ya-7BF-->
-        <scene sceneID="nMp-J8-ntq">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="UITableViewController-T09-ya-7BF" storyboardName="Trip Summary" referencedIdentifier="UITableViewController-T09-ya-7BF" id="Mlb-Hv-CWx" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wnh-CA-Plr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1537" y="26"/>
-        </scene>
     </scenes>
     <resources>
         <image name="traffic" width="5456" height="3632"/>
