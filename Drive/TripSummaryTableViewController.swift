@@ -153,7 +153,7 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
         case "Driver Rating":
             cell.detailTextLabel?.text = String(format: "%.1f out of 10", trip.driverRating)
         case "Number of offenses":
-            cell.detailTextLabel?.text = String(format: "%d/%d", trip.numberOfOffenses, trip.totalDataPoints)
+            cell.detailTextLabel?.text = String(format: "%d", trip.numberOfOffenses)
         default:
             break
         }
