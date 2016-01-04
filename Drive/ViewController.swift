@@ -11,6 +11,7 @@ import CoreLocation
 import Social
 import AEXML
 import AudioToolbox
+import AVFoundation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresenterVC {
     
@@ -30,7 +31,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     
     var isDriving: Bool = false
     var wasSpeeding: Bool = false
-    
+    var speedingCount: Int = 0
     // Stores start and stop dates of current drive
     var startDate: NSDate!
     var stopDate: NSDate!
@@ -111,15 +112,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             {
                 if (2.2374 * speed > Double(limit!+5))
                 {
-                    if (self.wasSpeeding == false)
+                    self.speedingCount++
+                    if (self.speedingCount >= 4)
                     {
                         print("Beeping")
-                        AudioServicesPlaySystemSound(1255) // Play beep if user is over the speed limit
+                        //AudioServicesPlaySystemSound(1255) // Play beep if user is over the speed limit
+                        let synthesizer = AVSpeechSynthesizer()
+                        let utterance = AVSpeechUtterance(string: "Please Slow Down")
+                        synthesizer.speakUtterance(utterance)
+                        
+                        self.speedingCount = 0
                     }
-                    self.wasSpeeding = true
                 }else
                 {
-                    self.wasSpeeding = false
+                    self.speedingCount = 0
                 }
             }
         })
