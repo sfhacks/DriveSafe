@@ -23,7 +23,7 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
     @IBOutlet weak var chart: LineChartView!
     
     // MARK: - Properties
-    var info = ["Average Speed", "Time Elapsed", "Driver Rating", "Number of offenses"]
+    var info = ["Average Speed", "Time Elapsed", "Driver Rating", "% of trip over limit"]
     var trip: Trip!
     var delegate: ModalPresenterVC?
     var notModal: Bool = false // If this is true, the view controller was pushed by a navigation controller. If false, it was modally presented
@@ -96,6 +96,7 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
 
         
         chart.userInteractionEnabled = false
+        chart.animate(xAxisDuration: 2.0)
         chart.noDataText = "No Data Availible"
     }
     
@@ -115,7 +116,7 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
         vc.view.backgroundColor = UIColor.clearColor()
         vc.mailComposeDelegate = self
         vc.setSubject("My Driver Rating")
-        vc.setMessageBody("On my latest drive, I got a driver rating of \(trip.driverRating) out of 10!", isHTML: false)
+        vc.setMessageBody("On my latest drive, I got a driver rating of \(String(format: "%.1f", trip.driverRating)) out of 10!", isHTML: false)
         presentViewController(vc, animated: true, completion: nil)
     }
     
@@ -152,8 +153,8 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
             cell.detailTextLabel?.text = String(format: "%.1f MPH", 2.2374 * trip.averageSpeed)
         case "Driver Rating":
             cell.detailTextLabel?.text = String(format: "%.1f out of 10", trip.driverRating)
-        case "Number of offenses":
-            cell.detailTextLabel?.text = String(format: "%d", trip.numberOfOffenses)
+        case "% of trip over limit":
+            cell.detailTextLabel?.text = String(format: "%d", Int(100 - 10*trip.driverRating))
         default:
             break
         }
