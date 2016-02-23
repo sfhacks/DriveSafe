@@ -2,6 +2,8 @@
 
 Driving made Safe. Made for 2015-2016 Congressional App Challenge
 
+Recipient of the 2nd place award for the Congressional App Challenge 2015 CA-18 
+
 #Description
 
 This DriveSafe application was coded in Swift using the Xcode platform for iOS.
