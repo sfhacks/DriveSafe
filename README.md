@@ -8,11 +8,11 @@ Recipient of the 2nd place award for the Congressional App Challenge 2015 CA-18
 
 This DriveSafe application was coded in Swift using the Xcode platform for iOS.
 It's purpose is to facilitate driver safety by increasing the user's awarness about how fast they are going and the speed limit on the road that they are on. We used the Open Street Map API to find the speed limit of each street and Apple's Core Location kit to track how fast the user is going. The application prompts the user to enable "Do not Disturb" mode while driving and it also tweets #X (a tool that teens and others can use to pause a text or social conversation before driving). Also, the app beeps if the user is going 5mph over the speed limit. After the drive, it compiles the data into a driver rating which can then be sent to parents or guardians. 
-Additionaly, the app has a tips section to encourage good driving habits.
+Additionaly, the app has a tips section to encourage good driving habits and inform the driver about various driving tidbits.
 
 #Tools Used
 
-Xcode - Platform for coding the app <br />
+Xcode - Platform for coding the app in iOS <br />
 Sketch - Designing the application logo <br />
 Nominatim (http://wiki.openstreetmap.org/wiki/Nominatim) - Reverse geocoding to find streets from given coordinates <br />
 Open Street Map (OSM) - Finding speed limits for streets <br />
