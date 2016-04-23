@@ -19,6 +19,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var mphLabel: UILabel!
     @IBOutlet weak var speedLimitLabel: UILabel!
+    @IBOutlet weak var streetLabel: UILabel!
     
     // Used for animation
     @IBOutlet weak var buttonHeightConstraint: NSLayoutConstraint!
@@ -35,10 +36,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     // Stores start and stop dates of current drive
     var startDate: NSDate!
     var stopDate: NSDate!
-    
+    var placeMark: CLPlacemark!
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
         speedLimitLabel.alpha = 0.0
+        streetLabel.alpha = 0.0
         speedLimitHeightContraint.constant = -50
         super.viewDidLoad()
         navigationController?.navigationBar.hideBottomHairline()
@@ -131,6 +133,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
         })
         
         data.append(locations[0])
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(locations[0], completionHandler: {
+            placemarks, error in
+            if error == nil && placemarks!.count > 0 {
+                self.placeMark = placemarks!.last as CLPlacemark!
+                let street: String = self.placeMark!.thoroughfare!;
+                print(street)
+                self.streetLabel.text! = street
+            }
+        })
+
     }
     
     
@@ -157,17 +171,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             speedLimitHeightContraint.constant = 0
             mphLabel.text = "Current Speed: \(0) MPH"
             speedLimitLabel.text = "0 MPH"
+            self.streetLabel.text = "Street:"
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.view.layoutIfNeeded()
                 self.speedLimitLabel.alpha = 1.0
+                self.streetLabel.alpha = 1.0
+                var streetFrame : CGRect = self.streetLabel.frame
+                streetFrame.origin.y-=2;
+                self.streetLabel.frame = streetFrame
+                
+            
             })
+            
             manager.startUpdatingLocation()
             startDate = NSDate()
+            
         }else
         {
             navigationController?.navigationBarHidden = false
             stopDate = NSDate()
             speedLimitLabel.text = "0 MPH"
+            streetLabel.text = "Street:"
             manager.stopUpdatingLocation()
             startStopButton.setTitle("Start Drive", forState: UIControlState.Normal)
             startStopButton.setTitle("Start Drive", forState: UIControlState.Normal)
@@ -176,7 +200,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             speedLimitHeightContraint.constant = -50
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.view.layoutIfNeeded()
+                var streetFrame : CGRect = self.streetLabel.frame
+                streetFrame.origin.y-=10;
+                self.streetLabel.frame = streetFrame
                 self.speedLimitLabel.alpha = 0.0
+                self.streetLabel.alpha = 0.0
             })
             isDriving = false
             

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k0z-EG-ydV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k0z-EG-ydV">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -32,6 +32,12 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="78 MPH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eE-gg-C84">
+                                <rect key="frame" x="202" y="88" width="197" height="65"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="54"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiW-YJ-4XE">
                                 <rect key="frame" x="225" y="225" width="150" height="150"/>
                                 <color key="backgroundColor" red="0.0" green="0.77677837171052633" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,10 +53,10 @@
                                     <action selector="startStopPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="IIX-4U-qx5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="78 MPH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eE-gg-C84">
-                                <rect key="frame" x="203" y="83" width="194" height="74"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="54"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhr-tg-369">
+                                <rect key="frame" x="260.5" y="174" width="79.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -59,12 +65,14 @@
                             <constraint firstItem="3oA-Uv-5eE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="G7r-H1-7R1"/>
                             <constraint firstItem="YGs-JC-XZI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ken-l1-zJf"/>
                             <constraint firstItem="3eE-gg-C84" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.4" id="MR0-ux-lZV"/>
+                            <constraint firstItem="YGs-JC-XZI" firstAttribute="top" secondItem="bhr-tg-369" secondAttribute="bottom" constant="-210" id="NlK-Np-YBL"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YGs-JC-XZI" secondAttribute="bottom" id="PbM-83-CZ0"/>
                             <constraint firstItem="jiW-YJ-4XE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WdR-N2-5nQ"/>
                             <constraint firstAttribute="trailing" secondItem="3oA-Uv-5eE" secondAttribute="trailing" id="XuW-an-k1G"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3oA-Uv-5eE" secondAttribute="bottom" id="YRE-DC-V9T"/>
                             <constraint firstAttribute="trailing" secondItem="YGs-JC-XZI" secondAttribute="trailing" id="cA9-q6-Z0F"/>
                             <constraint firstItem="jiW-YJ-4XE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ch1-9u-Jeb"/>
+                            <constraint firstItem="bhr-tg-369" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fHw-Wl-ZG5"/>
                             <constraint firstItem="YGs-JC-XZI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="qTq-dc-3dc"/>
                             <constraint firstItem="3eE-gg-C84" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zPh-Xt-0iD"/>
                         </constraints>
@@ -87,6 +95,7 @@
                         <outlet property="speedLimitHeightContraint" destination="MR0-ux-lZV" id="yks-aI-xrU"/>
                         <outlet property="speedLimitLabel" destination="3eE-gg-C84" id="uum-u6-BaX"/>
                         <outlet property="startStopButton" destination="jiW-YJ-4XE" id="Jrc-MB-0tb"/>
+                        <outlet property="streetLabel" destination="bhr-tg-369" id="Xpa-1y-ag5"/>
                         <segue destination="VBT-Mc-Aq2" kind="presentation" identifier="showTripData" modalPresentationStyle="overCurrentContext" id="ZSD-I0-GOy"/>
                         <segue destination="jpG-K4-ZsI" kind="presentation" identifier="goToLegal" id="Pjm-JQ-Uui"/>
                     </connections>
