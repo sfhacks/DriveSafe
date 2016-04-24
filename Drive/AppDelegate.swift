@@ -7,6 +7,8 @@
 //
 
 import UIKit
+var main: ViewController!
+
 
 // Sets navigation bar to custom settings
 func setNav()
@@ -89,6 +91,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        if(shortcutItem.type == "DriveSafe.startDrive") {
+            print("starting drive")
+            main.startStopPressed()
+        }
+        if(shortcutItem.type == "DriveSafe.stopDrive") {
+            print("stopping drive")
+            main.startStopPressed()
+        }
+        
     }
 
 }

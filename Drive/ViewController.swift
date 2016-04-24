@@ -39,6 +39,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     var placeMark: CLPlacemark!
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
+        
+        
         speedLimitLabel.alpha = 0.0
         streetLabel.alpha = 0.0
         speedLimitHeightContraint.constant = -50
@@ -56,6 +58,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
         {
             performSegueWithIdentifier("goToLegal", sender: nil)
         }
+        
+        main = self
     }
     
     // MARK: - Core Location
