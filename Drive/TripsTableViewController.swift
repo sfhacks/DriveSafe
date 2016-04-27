@@ -7,6 +7,7 @@
 //
 
 import UIKit
+var VC: TripSummaryTableViewController!
 
 class TripsTableViewController: UITableViewController {
     
@@ -16,6 +17,8 @@ class TripsTableViewController: UITableViewController {
     
     //MARK: - VC Lifecycle
     override func viewDidLoad() {
+        
+        
         // Extract trips from NSUserDefaults
         let defaults = NSUserDefaults.standardUserDefaults()
         if let tripsData = defaults.objectForKey("trips") as? NSData
@@ -31,6 +34,9 @@ class TripsTableViewController: UITableViewController {
         navigationController?.navigationBar.hideBottomHairline()
         (presentingViewController as! UINavigationController).navigationBarHidden = true
         clearsSelectionOnViewWillAppear = true
+        
+        //registerForPreviewingWithDelegate(self, sourceView: view)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -65,7 +71,7 @@ class TripsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
         cell.textLabel?.text = "\(indexPath.row)"
         cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2)
-
+        
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.textLabel?.backgroundColor = UIColor.clearColor()
         cell.detailTextLabel?.textColor = UIColor.whiteColor()

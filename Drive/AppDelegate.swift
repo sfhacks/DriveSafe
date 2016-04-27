@@ -98,10 +98,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("starting drive")
             main.startStopPressed()
         }
-        if(shortcutItem.type == "DriveSafe.stopDrive") {
-            print("stopping drive")
-            main.startStopPressed()
-        }
         
     }
 

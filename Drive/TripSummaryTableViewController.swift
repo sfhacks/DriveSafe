@@ -14,6 +14,7 @@ import MapKit
 
 var MapLine: MKPolyline!
 
+
 // didDismiss is called when a modalally presented view controller dismisses itself
 // This protocol is used to allow ViewController.swift to be notified so it can remove the blur when needed
 protocol ModalPresenterVC
@@ -104,34 +105,35 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
         chart.animate(xAxisDuration: 2.0)
         chart.noDataText = "No Data Available"
         
-        var poly = trip.data.map { (old) -> CLLocationCoordinate2D in
-            return old.coordinate
+        if(trip.data.count>0) {
+            
+            var poly = trip.data.map { (old) -> CLLocationCoordinate2D in
+                return old.coordinate
+            }
+            
+            let len = Double(trip.data.count)
+            
+            let mid = Int(trip.data.count/2)
+            
+            MapLine = MKPolyline(coordinates: &poly, count: poly.count)
+            
+            //fetching lat and long from the trip
+            
+            let latitude:CLLocationDegrees = (trip.data[mid].coordinate.latitude)
+            let longitude:CLLocationDegrees = (trip.data[mid].coordinate.longitude)
+            let latDelta:CLLocationDegrees = 0.03*(len/100)
+            let lonDelta:CLLocationDegrees = 0.03*(len/100)
+            let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+            let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+            let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+            
+            
+            mapV.delegate = self
+            mapV.setRegion(region, animated: false)
+            self.mapV.addOverlay(MapLine, level: MKOverlayLevel.AboveRoads)
         }
         
-        MapLine = MKPolyline(coordinates: &poly, count: poly.count)
         
-        
-        var latitude:CLLocationDegrees = (trip.data.first?.coordinate.latitude)!
-        
-        var longitude:CLLocationDegrees = (trip.data.first?.coordinate.longitude)!
-        
-        var latDelta:CLLocationDegrees = 0.07
-        
-        var lonDelta:CLLocationDegrees = 0.07
-        
-        var span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
-        
-        var location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-        
-        var region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-        
-        mapV.delegate = self
-        
-        mapV.setRegion(region, animated: false)
-        
-        //mapV.addOverlay(MapLine)
-        
-        self.mapV.addOverlay(MapLine, level: MKOverlayLevel.AboveRoads)
         
     }
     
@@ -141,7 +143,7 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
             let polyLine = overlay
             let polyLineRenderer = MKPolylineRenderer(overlay: polyLine)
             polyLineRenderer.strokeColor = UIColor.blueColor()
-            polyLineRenderer.lineWidth = 2.0
+            polyLineRenderer.lineWidth = 2.5
             
             return polyLineRenderer
         }

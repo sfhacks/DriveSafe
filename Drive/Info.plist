@@ -23,7 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We need this so we can track your car's speed</string>
+	<string>We need this so we can track your car&apos;s speed</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<true/>
 	<key>UIApplicationShortcutItems</key>
@@ -35,14 +35,6 @@
 			<string>Start Drive</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>DriveSafe.startDrive</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypePause</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Stop Drive</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>DriveSafe.stopDrive</string>
 		</dict>
 	</array>
 	<key>UIBackgroundModes</key>
