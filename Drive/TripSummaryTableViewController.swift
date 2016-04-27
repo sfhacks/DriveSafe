@@ -10,6 +10,9 @@ import UIKit
 import CoreLocation
 import MessageUI
 import Charts
+import MapKit
+
+var MapLine: MKPolyline!
 
 // didDismiss is called when a modalally presented view controller dismisses itself
 // This protocol is used to allow ViewController.swift to be notified so it can remove the blur when needed
@@ -18,9 +21,10 @@ protocol ModalPresenterVC
     func didDismiss()
 }
 
-class TripSummaryTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+class TripSummaryTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var chart: LineChartView!
+    @IBOutlet weak var mapV: MKMapView!
     
     // MARK: - Properties
     var info = ["Average Speed", "Time Elapsed", "Driver Rating", "% of trip over limit"]
@@ -32,6 +36,7 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationController?.navigationBar.hideBottomHairline()
         (presentingViewController as! UINavigationController).navigationBarHidden = true
 
@@ -97,7 +102,51 @@ class TripSummaryTableViewController: UITableViewController, MFMailComposeViewCo
         
         chart.userInteractionEnabled = false
         chart.animate(xAxisDuration: 2.0)
-        chart.noDataText = "No Data Availible"
+        chart.noDataText = "No Data Available"
+        
+        var poly = trip.data.map { (old) -> CLLocationCoordinate2D in
+            return old.coordinate
+        }
+        
+        MapLine = MKPolyline(coordinates: &poly, count: poly.count)
+        
+        
+        var latitude:CLLocationDegrees = (trip.data.first?.coordinate.latitude)!
+        
+        var longitude:CLLocationDegrees = (trip.data.first?.coordinate.longitude)!
+        
+        var latDelta:CLLocationDegrees = 0.07
+        
+        var lonDelta:CLLocationDegrees = 0.07
+        
+        var span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+        
+        var location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        
+        var region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        
+        mapV.delegate = self
+        
+        mapV.setRegion(region, animated: false)
+        
+        //mapV.addOverlay(MapLine)
+        
+        self.mapV.addOverlay(MapLine, level: MKOverlayLevel.AboveRoads)
+        
+    }
+    
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if overlay.isKindOfClass(MKPolyline) {
+            // draw the track
+            let polyLine = overlay
+            let polyLineRenderer = MKPolylineRenderer(overlay: polyLine)
+            polyLineRenderer.strokeColor = UIColor.blueColor()
+            polyLineRenderer.lineWidth = 2.0
+            
+            return polyLineRenderer
+        }
+        
+        return nil
     }
     
     @IBAction func doneButtonPressed(sender: AnyObject) {

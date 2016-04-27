@@ -2,25 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypePlay</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Start Drive</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>DriveSafe.startDrive</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypePause</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Stop Drive</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>DriveSafe.stopDrive</string>
-		</dict>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -42,9 +23,28 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We need this so we can track your car&apos;s speed</string>
+	<string>We need this so we can track your car's speed</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<true/>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypePlay</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Start Drive</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>DriveSafe.startDrive</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypePause</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Stop Drive</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>DriveSafe.stopDrive</string>
+		</dict>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

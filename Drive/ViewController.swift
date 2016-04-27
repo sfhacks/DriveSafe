@@ -12,6 +12,9 @@ import Social
 import AEXML
 import AudioToolbox
 import AVFoundation
+import MapKit
+
+
 
 class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresenterVC {
     
@@ -26,6 +29,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
     @IBOutlet weak var speedLimitHeightContraint: NSLayoutConstraint!
     
     var manager: CLLocationManager!
+    
     
     var data: [CLLocation] = [] // Array of locations
     var limits: [Int] = [] // Array of speed limits
@@ -138,6 +142,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
         
         data.append(locations[0])
         let geocoder = CLGeocoder()
+
         
         geocoder.reverseGeocodeLocation(locations[0], completionHandler: {
             placemarks, error in

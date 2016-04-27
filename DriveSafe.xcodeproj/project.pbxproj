@@ -170,6 +170,7 @@
 				TargetAttributes = {
 					A1571A711C2B359200922698 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 644K27Q47A;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -377,10 +378,13 @@
 			baseConfigurationReference = B38EF844DD2A50C1329A1709 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Drive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.ke.DriveSafe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.gudibande.DriveSafe;
 				PRODUCT_NAME = DriveSafe;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -389,10 +393,13 @@
 			baseConfigurationReference = 067EC4313145E732104B0CD0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Drive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.ke.DriveSafe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.gudibande.DriveSafe;
 				PRODUCT_NAME = DriveSafe;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
