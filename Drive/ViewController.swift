@@ -147,10 +147,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
         geocoder.reverseGeocodeLocation(locations[0], completionHandler: {
             placemarks, error in
             if error == nil && placemarks!.count > 0 {
-                self.placeMark = placemarks!.last as CLPlacemark!
-                let street: String = self.placeMark!.thoroughfare!;
-                print(street)
-                self.streetLabel.text! = street
+                if let placemarks = placemarks {
+                if placemarks.count>0 {
+                    if let placeMark = placemarks.last {
+                        self.placeMark = placeMark
+                    }
+                }
+                }
+                
+                    //self.placeMark = placemarks.last as CLPlacemark
+                if let street = self.placeMark.thoroughfare {
+                    self.streetLabel.text = street
+                }
+                    //let street: String = self.placeMark.thoroughfare;
+                    //print(street)
+                    //self.streetLabel.text = street
             }
         })
 

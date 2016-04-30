@@ -170,7 +170,7 @@
 				TargetAttributes = {
 					A1571A711C2B359200922698 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 644K27Q47A;
+						DevelopmentTeam = 3S25WNT6LV;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -382,7 +382,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Drive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.gudibande.DriveSafe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nishandsouza.NishanDSouza;
 				PRODUCT_NAME = DriveSafe;
 				PROVISIONING_PROFILE = "";
 			};
@@ -397,7 +397,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Drive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.gudibande.DriveSafe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nishandsouza.NishanDSouza;
 				PRODUCT_NAME = DriveSafe;
 				PROVISIONING_PROFILE = "";
 			};

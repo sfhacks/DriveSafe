@@ -23,7 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We need this so we can track your car&apos;s speed</string>
+	<string>We need this so we can track your car's speed</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<true/>
 	<key>UIApplicationShortcutItems</key>
