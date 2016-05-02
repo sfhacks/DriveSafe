@@ -4,11 +4,12 @@ Driving made Safe. Made for 2015-2016 Congressional App Challenge
 
 Recipient of the 2nd place award for the Congressional App Challenge 2015 CA-18 
 
+Recognized by Secratary Foxx of the USDOT and Congresswoman Anna G. Eshoo
+
 #Description
 
-This DriveSafe application was coded in Swift using the Xcode platform for iOS.
-It's purpose is to facilitate driver safety by increasing the user's awarness about how fast they are going and the speed limit on the road that they are on. We used the Open Street Map API to find the speed limit of each street and Apple's Core Location kit to track how fast the user is going. The application prompts the user to enable "Do not Disturb" mode while driving and it also tweets #X (a tool that teens and others can use to pause a text or social conversation before driving). Also, the app beeps if the user is going 5mph over the speed limit. After the drive, it compiles the data into a driver rating which can then be sent to parents or guardians. 
-Additionaly, the app has a tips section to encourage good driving habits and inform the driver about various driving tidbits.
+DriveSafe was coded in Swift using the Xcode platform for iOS.
+Its purpose is to facilitate driver safety by increasing the user's awarness about how fast they are going and the speed limit on the road that they are on. We used the Open Street Map API to find the speed limit of each street and Apple's Core Location kit to track how fast the user is going. The application prompts the user to enable "Do not Disturb" mode while driving and it also tweets #X (a tool that teens and others can use to pause a text or social conversation before driving). Also, Siri prompts the user to slow down if he/she is going 5mph over the speed limit. After the drive, it compiles the data into a driver rating which can then be sent to parents or guardians. We also overlayed a polyline on an MKMapView to give a more comprehensive view of the user's drive. Additionaly, the app has a tips section to encourage good driving habits.
 
 #Tools Used
 
