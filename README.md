@@ -23,7 +23,7 @@ Swift - programming language used <br />
 
 #Design
 
-![alt tag](https://lh3.googleusercontent.com/-tWkrF6LozSc/VoR3yluyvgI/AAAAAAAAAMk/SHyoNzxq0zc/w852-h1514/simulator_screen_shot_dec_23__2015__8.06.57_pm_720.png, "Home Screen")
+![alt tag](https://lh3.googleusercontent.com/-tWkrF6LozSc/VoR3yluyvgI/AAAAAAAAAMk/SHyoNzxq0zc/w852-h1514/simulator_screen_shot_dec_23__2015__8.06.57_pm_720.png, "Home Screen") ![](https://lh3.googleusercontent.com/-u5KIDrhBtrs/VyrTJt6WGdI/AAAAAAAAAPM/dWzQIb5XTTEYPKCzHBMz7dKaA8KN1wHaQCL0B/w698-h1238-no/Slack%2Bfor%2BiOS%2BUpload.jpg, "Maps")
 
 
 #Disclaimer
