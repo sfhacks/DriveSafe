@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3A3696A895E8E00C5AAE4D27 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B698B6BA5F70BBE1DB232E52 /* Pods.framework */; };
+		65393F981D453EF200B23A9C /* DriveSafeServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65393F8F1D453EF100B23A9C /* DriveSafeServer.framework */; };
+		65393F9F1D453EF200B23A9C /* DriveSafeServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65393F9E1D453EF200B23A9C /* DriveSafeServerTests.swift */; };
+		65393FA11D453EF200B23A9C /* DriveSafeServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 65393F911D453EF100B23A9C /* DriveSafeServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65393FA41D453EF200B23A9C /* DriveSafeServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65393F8F1D453EF100B23A9C /* DriveSafeServer.framework */; };
+		65393FA51D453EF200B23A9C /* DriveSafeServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65393F8F1D453EF100B23A9C /* DriveSafeServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A1338A3D1C34C45200CE23AF /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1338A3C1C34C45200CE23AF /* LegalViewController.swift */; };
 		A14F8F191C3A055A0077646A /* Tips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14F8F181C3A055A0077646A /* Tips.storyboard */; };
 		A14F8F1B1C3A05970077646A /* Legal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14F8F1A1C3A05970077646A /* Legal.storyboard */; };
@@ -27,8 +32,52 @@
 		A1E849881C2F98B500D37E7C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E849871C2F98B500D37E7C /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		65393F991D453EF200B23A9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1571A6A1C2B359200922698 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65393F8E1D453EF100B23A9C;
+			remoteInfo = DriveSafeServer;
+		};
+		65393F9B1D453EF200B23A9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1571A6A1C2B359200922698 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1571A711C2B359200922698;
+			remoteInfo = DriveSafe;
+		};
+		65393FA21D453EF200B23A9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1571A6A1C2B359200922698 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65393F8E1D453EF100B23A9C;
+			remoteInfo = DriveSafeServer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		65393FAB1D453EF200B23A9C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				65393FA51D453EF200B23A9C /* DriveSafeServer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		067EC4313145E732104B0CD0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		65393F8F1D453EF100B23A9C /* DriveSafeServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DriveSafeServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65393F911D453EF100B23A9C /* DriveSafeServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DriveSafeServer.h; sourceTree = "<group>"; };
+		65393F921D453EF100B23A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65393F971D453EF200B23A9C /* DriveSafeServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveSafeServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65393F9E1D453EF200B23A9C /* DriveSafeServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveSafeServerTests.swift; sourceTree = "<group>"; };
+		65393FA01D453EF200B23A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1338A3C1C34C45200CE23AF /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		A14F8F181C3A055A0077646A /* Tips.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tips.storyboard; sourceTree = "<group>"; };
 		A14F8F1A1C3A05970077646A /* Legal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Legal.storyboard; sourceTree = "<group>"; };
@@ -53,11 +102,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		65393F8B1D453EF100B23A9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65393F941D453EF200B23A9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65393F981D453EF200B23A9C /* DriveSafeServer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1571A6F1C2B359200922698 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A1E849881C2F98B500D37E7C /* AudioToolbox.framework in Frameworks */,
+				65393FA41D453EF200B23A9C /* DriveSafeServer.framework in Frameworks */,
 				A1571A881C2B3AF300922698 /* CoreLocation.framework in Frameworks */,
 				3A3696A895E8E00C5AAE4D27 /* Pods.framework in Frameworks */,
 			);
@@ -85,6 +150,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		65393F901D453EF100B23A9C /* DriveSafeServer */ = {
+			isa = PBXGroup;
+			children = (
+				65393F911D453EF100B23A9C /* DriveSafeServer.h */,
+				65393F921D453EF100B23A9C /* Info.plist */,
+			);
+			path = DriveSafeServer;
+			sourceTree = "<group>";
+		};
+		65393F9D1D453EF200B23A9C /* DriveSafeServerTests */ = {
+			isa = PBXGroup;
+			children = (
+				65393F9E1D453EF200B23A9C /* DriveSafeServerTests.swift */,
+				65393FA01D453EF200B23A9C /* Info.plist */,
+			);
+			path = DriveSafeServerTests;
+			sourceTree = "<group>";
+		};
 		A14F8F201C3A05F20077646A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				A1571A741C2B359200922698 /* DriveSafe */,
+				65393F901D453EF100B23A9C /* DriveSafeServer */,
+				65393F9D1D453EF200B23A9C /* DriveSafeServerTests */,
 				A1571A731C2B359200922698 /* Products */,
 				517B025DC85A34BD1CAE0C3D /* Pods */,
 				575A4BF7FBDE6680D5C04DAF /* Frameworks */,
@@ -111,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				A1571A721C2B359200922698 /* DriveSafe.app */,
+				65393F8F1D453EF100B23A9C /* DriveSafeServer.framework */,
+				65393F971D453EF200B23A9C /* DriveSafeServerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,7 +224,55 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		65393F8C1D453EF100B23A9C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65393FA11D453EF200B23A9C /* DriveSafeServer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		65393F8E1D453EF100B23A9C /* DriveSafeServer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65393FAA1D453EF200B23A9C /* Build configuration list for PBXNativeTarget "DriveSafeServer" */;
+			buildPhases = (
+				65393F8A1D453EF100B23A9C /* Sources */,
+				65393F8B1D453EF100B23A9C /* Frameworks */,
+				65393F8C1D453EF100B23A9C /* Headers */,
+				65393F8D1D453EF100B23A9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DriveSafeServer;
+			productName = DriveSafeServer;
+			productReference = 65393F8F1D453EF100B23A9C /* DriveSafeServer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		65393F961D453EF200B23A9C /* DriveSafeServerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65393FAC1D453EF200B23A9C /* Build configuration list for PBXNativeTarget "DriveSafeServerTests" */;
+			buildPhases = (
+				65393F931D453EF200B23A9C /* Sources */,
+				65393F941D453EF200B23A9C /* Frameworks */,
+				65393F951D453EF200B23A9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65393F9A1D453EF200B23A9C /* PBXTargetDependency */,
+				65393F9C1D453EF200B23A9C /* PBXTargetDependency */,
+			);
+			name = DriveSafeServerTests;
+			productName = DriveSafeServerTests;
+			productReference = 65393F971D453EF200B23A9C /* DriveSafeServerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A1571A711C2B359200922698 /* DriveSafe */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1571A841C2B359300922698 /* Build configuration list for PBXNativeTarget "DriveSafe" */;
@@ -148,10 +283,12 @@
 				A1571A701C2B359200922698 /* Resources */,
 				FB5AE329AE31C9FF8663DC24 /* Embed Pods Frameworks */,
 				DC370FDEF74FDD25D431BB98 /* Copy Pods Resources */,
+				65393FAB1D453EF200B23A9C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				65393FA31D453EF200B23A9C /* PBXTargetDependency */,
 			);
 			name = DriveSafe;
 			productName = Drive;
@@ -164,10 +301,23 @@
 		A1571A6A1C2B359200922698 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Andrew;
 				TargetAttributes = {
+					65393F8E1D453EF100B23A9C = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3S25WNT6LV;
+						DevelopmentTeamName = "Nishan D'Souza (Personal Team)";
+						ProvisioningStyle = Automatic;
+					};
+					65393F961D453EF200B23A9C = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3S25WNT6LV;
+						DevelopmentTeamName = "Nishan D'Souza (Personal Team)";
+						ProvisioningStyle = Automatic;
+						TestTargetID = A1571A711C2B359200922698;
+					};
 					A1571A711C2B359200922698 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 3S25WNT6LV;
@@ -194,11 +344,27 @@
 			projectRoot = "";
 			targets = (
 				A1571A711C2B359200922698 /* DriveSafe */,
+				65393F8E1D453EF100B23A9C /* DriveSafeServer */,
+				65393F961D453EF200B23A9C /* DriveSafeServerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		65393F8D1D453EF100B23A9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65393F951D453EF200B23A9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1571A701C2B359200922698 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,6 +430,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		65393F8A1D453EF100B23A9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65393F931D453EF200B23A9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65393F9F1D453EF200B23A9C /* DriveSafeServerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1571A6E1C2B359200922698 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -281,6 +462,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		65393F9A1D453EF200B23A9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65393F8E1D453EF100B23A9C /* DriveSafeServer */;
+			targetProxy = 65393F991D453EF200B23A9C /* PBXContainerItemProxy */;
+		};
+		65393F9C1D453EF200B23A9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1571A711C2B359200922698 /* DriveSafe */;
+			targetProxy = 65393F9B1D453EF200B23A9C /* PBXContainerItemProxy */;
+		};
+		65393FA31D453EF200B23A9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65393F8E1D453EF100B23A9C /* DriveSafeServer */;
+			targetProxy = 65393FA21D453EF200B23A9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		A1571A7E1C2B359300922698 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -293,6 +492,92 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		65393FA61D453EF200B23A9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DriveSafeServer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NishanDSouza.DriveSafeServer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		65393FA71D453EF200B23A9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DriveSafeServer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NishanDSouza.DriveSafeServer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		65393FA81D453EF200B23A9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = DriveSafeServerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NishanDSouza.DriveSafeServerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DriveSafe.app/DriveSafe";
+			};
+			name = Debug;
+		};
+		65393FA91D453EF200B23A9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = DriveSafeServerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NishanDSouza.DriveSafeServerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DriveSafe.app/DriveSafe";
+			};
+			name = Release;
+		};
 		A1571A821C2B359300922698 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -409,6 +694,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		65393FAA1D453EF200B23A9C /* Build configuration list for PBXNativeTarget "DriveSafeServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65393FA61D453EF200B23A9C /* Debug */,
+				65393FA71D453EF200B23A9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		65393FAC1D453EF200B23A9C /* Build configuration list for PBXNativeTarget "DriveSafeServerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65393FA81D453EF200B23A9C /* Debug */,
+				65393FA91D453EF200B23A9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		A1571A6D1C2B359200922698 /* Build configuration list for PBXProject "DriveSafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

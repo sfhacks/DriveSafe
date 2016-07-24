@@ -9,9 +9,34 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>DriveSafeServer.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>65393F551D452EEF00B23A9C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>65393F5D1D452EEF00B23A9C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>65393F8E1D453EF100B23A9C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>65393F961D453EF200B23A9C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A1571A711C2B359200922698</key>
 		<dict>
 			<key>primary</key>
