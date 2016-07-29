@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3A3696A895E8E00C5AAE4D27 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B698B6BA5F70BBE1DB232E52 /* Pods.framework */; };
-		65393F981D453EF200B23A9C /* DriveSafeServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65393F8F1D453EF100B23A9C /* DriveSafeServer.framework */; };
-		65393F9F1D453EF200B23A9C /* DriveSafeServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65393F9E1D453EF200B23A9C /* DriveSafeServerTests.swift */; };
-		65393FA11D453EF200B23A9C /* DriveSafeServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 65393F911D453EF100B23A9C /* DriveSafeServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65393FA41D453EF200B23A9C /* DriveSafeServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65393F8F1D453EF100B23A9C /* DriveSafeServer.framework */; };
-		65393FA51D453EF200B23A9C /* DriveSafeServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65393F8F1D453EF100B23A9C /* DriveSafeServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		653940031D454E5100B23A9C /* DriveSafeServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65393FFA1D454E5100B23A9C /* DriveSafeServer.framework */; };
+		6539400F1D454E5100B23A9C /* DriveSafeServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65393FFA1D454E5100B23A9C /* DriveSafeServer.framework */; };
+		653940101D454E5100B23A9C /* DriveSafeServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65393FFA1D454E5100B23A9C /* DriveSafeServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A1338A3D1C34C45200CE23AF /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1338A3C1C34C45200CE23AF /* LegalViewController.swift */; };
 		A14F8F191C3A055A0077646A /* Tips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14F8F181C3A055A0077646A /* Tips.storyboard */; };
 		A14F8F1B1C3A05970077646A /* Legal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14F8F1A1C3A05970077646A /* Legal.storyboard */; };
@@ -33,25 +31,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		65393F991D453EF200B23A9C /* PBXContainerItemProxy */ = {
+		653940041D454E5100B23A9C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A1571A6A1C2B359200922698 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 65393F8E1D453EF100B23A9C;
+			remoteGlobalIDString = 65393FF91D454E5100B23A9C;
 			remoteInfo = DriveSafeServer;
 		};
-		65393F9B1D453EF200B23A9C /* PBXContainerItemProxy */ = {
+		653940061D454E5100B23A9C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A1571A6A1C2B359200922698 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A1571A711C2B359200922698;
 			remoteInfo = DriveSafe;
 		};
-		65393FA21D453EF200B23A9C /* PBXContainerItemProxy */ = {
+		6539400D1D454E5100B23A9C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A1571A6A1C2B359200922698 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 65393F8E1D453EF100B23A9C;
+			remoteGlobalIDString = 65393FF91D454E5100B23A9C;
 			remoteInfo = DriveSafeServer;
 		};
 /* End PBXContainerItemProxy section */
@@ -63,7 +61,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				65393FA51D453EF200B23A9C /* DriveSafeServer.framework in Embed Frameworks */,
+				653940101D454E5100B23A9C /* DriveSafeServer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,12 +70,12 @@
 
 /* Begin PBXFileReference section */
 		067EC4313145E732104B0CD0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		65393F8F1D453EF100B23A9C /* DriveSafeServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DriveSafeServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65393F911D453EF100B23A9C /* DriveSafeServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DriveSafeServer.h; sourceTree = "<group>"; };
 		65393F921D453EF100B23A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65393F971D453EF200B23A9C /* DriveSafeServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveSafeServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65393F9E1D453EF200B23A9C /* DriveSafeServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveSafeServerTests.swift; sourceTree = "<group>"; };
 		65393FA01D453EF200B23A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65393FFA1D454E5100B23A9C /* DriveSafeServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DriveSafeServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		653940021D454E5100B23A9C /* DriveSafeServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveSafeServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1338A3C1C34C45200CE23AF /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		A14F8F181C3A055A0077646A /* Tips.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tips.storyboard; sourceTree = "<group>"; };
 		A14F8F1A1C3A05970077646A /* Legal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Legal.storyboard; sourceTree = "<group>"; };
@@ -102,18 +100,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		65393F8B1D453EF100B23A9C /* Frameworks */ = {
+		65393FF61D454E5100B23A9C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		65393F941D453EF200B23A9C /* Frameworks */ = {
+		65393FFF1D454E5100B23A9C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65393F981D453EF200B23A9C /* DriveSafeServer.framework in Frameworks */,
+				653940031D454E5100B23A9C /* DriveSafeServer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1E849881C2F98B500D37E7C /* AudioToolbox.framework in Frameworks */,
-				65393FA41D453EF200B23A9C /* DriveSafeServer.framework in Frameworks */,
+				6539400F1D454E5100B23A9C /* DriveSafeServer.framework in Frameworks */,
 				A1571A881C2B3AF300922698 /* CoreLocation.framework in Frameworks */,
 				3A3696A895E8E00C5AAE4D27 /* Pods.framework in Frameworks */,
 			);
@@ -196,8 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				A1571A721C2B359200922698 /* DriveSafe.app */,
-				65393F8F1D453EF100B23A9C /* DriveSafeServer.framework */,
-				65393F971D453EF200B23A9C /* DriveSafeServerTests.xctest */,
+				65393FFA1D454E5100B23A9C /* DriveSafeServer.framework */,
+				653940021D454E5100B23A9C /* DriveSafeServerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,25 +223,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		65393F8C1D453EF100B23A9C /* Headers */ = {
+		65393FF71D454E5100B23A9C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65393FA11D453EF200B23A9C /* DriveSafeServer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		65393F8E1D453EF100B23A9C /* DriveSafeServer */ = {
+		65393FF91D454E5100B23A9C /* DriveSafeServer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 65393FAA1D453EF200B23A9C /* Build configuration list for PBXNativeTarget "DriveSafeServer" */;
+			buildConfigurationList = 653940151D454E5100B23A9C /* Build configuration list for PBXNativeTarget "DriveSafeServer" */;
 			buildPhases = (
-				65393F8A1D453EF100B23A9C /* Sources */,
-				65393F8B1D453EF100B23A9C /* Frameworks */,
-				65393F8C1D453EF100B23A9C /* Headers */,
-				65393F8D1D453EF100B23A9C /* Resources */,
+				65393FF51D454E5100B23A9C /* Sources */,
+				65393FF61D454E5100B23A9C /* Frameworks */,
+				65393FF71D454E5100B23A9C /* Headers */,
+				65393FF81D454E5100B23A9C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -251,26 +248,26 @@
 			);
 			name = DriveSafeServer;
 			productName = DriveSafeServer;
-			productReference = 65393F8F1D453EF100B23A9C /* DriveSafeServer.framework */;
+			productReference = 65393FFA1D454E5100B23A9C /* DriveSafeServer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		65393F961D453EF200B23A9C /* DriveSafeServerTests */ = {
+		653940011D454E5100B23A9C /* DriveSafeServerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 65393FAC1D453EF200B23A9C /* Build configuration list for PBXNativeTarget "DriveSafeServerTests" */;
+			buildConfigurationList = 653940161D454E5100B23A9C /* Build configuration list for PBXNativeTarget "DriveSafeServerTests" */;
 			buildPhases = (
-				65393F931D453EF200B23A9C /* Sources */,
-				65393F941D453EF200B23A9C /* Frameworks */,
-				65393F951D453EF200B23A9C /* Resources */,
+				65393FFE1D454E5100B23A9C /* Sources */,
+				65393FFF1D454E5100B23A9C /* Frameworks */,
+				653940001D454E5100B23A9C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				65393F9A1D453EF200B23A9C /* PBXTargetDependency */,
-				65393F9C1D453EF200B23A9C /* PBXTargetDependency */,
+				653940051D454E5100B23A9C /* PBXTargetDependency */,
+				653940071D454E5100B23A9C /* PBXTargetDependency */,
 			);
 			name = DriveSafeServerTests;
 			productName = DriveSafeServerTests;
-			productReference = 65393F971D453EF200B23A9C /* DriveSafeServerTests.xctest */;
+			productReference = 653940021D454E5100B23A9C /* DriveSafeServerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		A1571A711C2B359200922698 /* DriveSafe */ = {
@@ -288,7 +285,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				65393FA31D453EF200B23A9C /* PBXTargetDependency */,
+				6539400E1D454E5100B23A9C /* PBXTargetDependency */,
 			);
 			name = DriveSafe;
 			productName = Drive;
@@ -305,13 +302,13 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Andrew;
 				TargetAttributes = {
-					65393F8E1D453EF100B23A9C = {
+					65393FF91D454E5100B23A9C = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3S25WNT6LV;
 						DevelopmentTeamName = "Nishan D'Souza (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
-					65393F961D453EF200B23A9C = {
+					653940011D454E5100B23A9C = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3S25WNT6LV;
 						DevelopmentTeamName = "Nishan D'Souza (Personal Team)";
@@ -344,21 +341,21 @@
 			projectRoot = "";
 			targets = (
 				A1571A711C2B359200922698 /* DriveSafe */,
-				65393F8E1D453EF100B23A9C /* DriveSafeServer */,
-				65393F961D453EF200B23A9C /* DriveSafeServerTests */,
+				65393FF91D454E5100B23A9C /* DriveSafeServer */,
+				653940011D454E5100B23A9C /* DriveSafeServerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		65393F8D1D453EF100B23A9C /* Resources */ = {
+		65393FF81D454E5100B23A9C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		65393F951D453EF200B23A9C /* Resources */ = {
+		653940001D454E5100B23A9C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -430,18 +427,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		65393F8A1D453EF100B23A9C /* Sources */ = {
+		65393FF51D454E5100B23A9C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		65393F931D453EF200B23A9C /* Sources */ = {
+		65393FFE1D454E5100B23A9C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65393F9F1D453EF200B23A9C /* DriveSafeServerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,20 +459,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		65393F9A1D453EF200B23A9C /* PBXTargetDependency */ = {
+		653940051D454E5100B23A9C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 65393F8E1D453EF100B23A9C /* DriveSafeServer */;
-			targetProxy = 65393F991D453EF200B23A9C /* PBXContainerItemProxy */;
+			target = 65393FF91D454E5100B23A9C /* DriveSafeServer */;
+			targetProxy = 653940041D454E5100B23A9C /* PBXContainerItemProxy */;
 		};
-		65393F9C1D453EF200B23A9C /* PBXTargetDependency */ = {
+		653940071D454E5100B23A9C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A1571A711C2B359200922698 /* DriveSafe */;
-			targetProxy = 65393F9B1D453EF200B23A9C /* PBXContainerItemProxy */;
+			targetProxy = 653940061D454E5100B23A9C /* PBXContainerItemProxy */;
 		};
-		65393FA31D453EF200B23A9C /* PBXTargetDependency */ = {
+		6539400E1D454E5100B23A9C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 65393F8E1D453EF100B23A9C /* DriveSafeServer */;
-			targetProxy = 65393FA21D453EF200B23A9C /* PBXContainerItemProxy */;
+			target = 65393FF91D454E5100B23A9C /* DriveSafeServer */;
+			targetProxy = 6539400D1D454E5100B23A9C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -492,7 +488,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		65393FA61D453EF200B23A9C /* Debug */ = {
+		653940111D454E5100B23A9C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
@@ -519,7 +515,7 @@
 			};
 			name = Debug;
 		};
-		65393FA71D453EF200B23A9C /* Release */ = {
+		653940121D454E5100B23A9C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
@@ -546,7 +542,7 @@
 			};
 			name = Release;
 		};
-		65393FA81D453EF200B23A9C /* Debug */ = {
+		653940131D454E5100B23A9C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
@@ -562,7 +558,7 @@
 			};
 			name = Debug;
 		};
-		65393FA91D453EF200B23A9C /* Release */ = {
+		653940141D454E5100B23A9C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
@@ -694,21 +690,23 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		65393FAA1D453EF200B23A9C /* Build configuration list for PBXNativeTarget "DriveSafeServer" */ = {
+		653940151D454E5100B23A9C /* Build configuration list for PBXNativeTarget "DriveSafeServer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				65393FA61D453EF200B23A9C /* Debug */,
-				65393FA71D453EF200B23A9C /* Release */,
+				653940111D454E5100B23A9C /* Debug */,
+				653940121D454E5100B23A9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		65393FAC1D453EF200B23A9C /* Build configuration list for PBXNativeTarget "DriveSafeServerTests" */ = {
+		653940161D454E5100B23A9C /* Build configuration list for PBXNativeTarget "DriveSafeServerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				65393FA81D453EF200B23A9C /* Debug */,
-				65393FA91D453EF200B23A9C /* Release */,
+				653940131D454E5100B23A9C /* Debug */,
+				653940141D454E5100B23A9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A1571A6D1C2B359200922698 /* Build configuration list for PBXProject "DriveSafe" */ = {
 			isa = XCConfigurationList;
