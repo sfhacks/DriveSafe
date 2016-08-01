@@ -2,8 +2,8 @@
 //  TripsTableViewController.swift
 //  Drive
 //
-//  Created by Arnav Gudibande on 12/24/15.
-//  Copyright © 2015 Arnav. All rights reserved.
+//  Created by Andrew Ke on 12/24/15.
+//  Copyright © 2015 Andrew. All rights reserved.
 //
 
 import UIKit
