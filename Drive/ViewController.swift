@@ -72,10 +72,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
         manager = CLLocationManager()
         manager.delegate = self
         
-        manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+        manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         
         // Set a movement threshold for new events.
-        manager.distanceFilter = 2; // meters
+        manager.distanceFilter = 10; // meters
         manager.requestAlwaysAuthorization()
         
         
@@ -122,11 +122,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, ModalPresente
             {
                 if (2.2374 * speed > Double(limit!+5))
                 {
-                    self.speedingCount++
+                    self.speedingCount+=1
                     if (self.speedingCount >= 4)
                     {
-                        print("Beeping")
-                        //AudioServicesPlaySystemSound(1255) // Play beep if user is over the speed limit
                         let synthesizer = AVSpeechSynthesizer()
                         let utterance = AVSpeechUtterance(string: "Please Slow Down")
                         synthesizer.speakUtterance(utterance)
