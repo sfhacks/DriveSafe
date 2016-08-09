@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A3696A895E8E00C5AAE4D27 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B698B6BA5F70BBE1DB232E52 /* Pods.framework */; };
 		A1338A3D1C34C45200CE23AF /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1338A3C1C34C45200CE23AF /* LegalViewController.swift */; };
 		A14F8F191C3A055A0077646A /* Tips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14F8F181C3A055A0077646A /* Tips.storyboard */; };
 		A14F8F1B1C3A05970077646A /* Legal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14F8F1A1C3A05970077646A /* Legal.storyboard */; };
@@ -25,10 +24,12 @@
 		A1E849821C2F153F00D37E7C /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E849811C2F153F00D37E7C /* TipsViewController.swift */; };
 		A1E849861C2F886D00D37E7C /* SpeedLimitFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E849851C2F886D00D37E7C /* SpeedLimitFinder.swift */; };
 		A1E849881C2F98B500D37E7C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E849871C2F98B500D37E7C /* AudioToolbox.framework */; };
+		A2C343D456FB55B319727088 /* Pods_DriveSafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 382676BE5D74646679B0F260 /* Pods_DriveSafe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		067EC4313145E732104B0CD0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		06BD50E1311C93594E08DBED /* Pods-DriveSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-DriveSafe/Pods-DriveSafe.release.xcconfig"; sourceTree = "<group>"; };
+		382676BE5D74646679B0F260 /* Pods_DriveSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DriveSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1338A3C1C34C45200CE23AF /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		A14F8F181C3A055A0077646A /* Tips.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tips.storyboard; sourceTree = "<group>"; };
 		A14F8F1A1C3A05970077646A /* Legal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Legal.storyboard; sourceTree = "<group>"; };
@@ -48,8 +49,8 @@
 		A1E849811C2F153F00D37E7C /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		A1E849851C2F886D00D37E7C /* SpeedLimitFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedLimitFinder.swift; sourceTree = "<group>"; };
 		A1E849871C2F98B500D37E7C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		B38EF844DD2A50C1329A1709 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B698B6BA5F70BBE1DB232E52 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8008C5512EF3BA776DD9A80 /* Pods-DriveSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriveSafe/Pods-DriveSafe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,18 +60,18 @@
 			files = (
 				A1E849881C2F98B500D37E7C /* AudioToolbox.framework in Frameworks */,
 				A1571A881C2B3AF300922698 /* CoreLocation.framework in Frameworks */,
-				3A3696A895E8E00C5AAE4D27 /* Pods.framework in Frameworks */,
+				A2C343D456FB55B319727088 /* Pods_DriveSafe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		517B025DC85A34BD1CAE0C3D /* Pods */ = {
+		3E4327BED429623A61A1CF67 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B38EF844DD2A50C1329A1709 /* Pods.debug.xcconfig */,
-				067EC4313145E732104B0CD0 /* Pods.release.xcconfig */,
+				D8008C5512EF3BA776DD9A80 /* Pods-DriveSafe.debug.xcconfig */,
+				06BD50E1311C93594E08DBED /* Pods-DriveSafe.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -81,6 +82,7 @@
 				A1571A871C2B3AF300922698 /* CoreLocation.framework */,
 				A1E849871C2F98B500D37E7C /* AudioToolbox.framework */,
 				B698B6BA5F70BBE1DB232E52 /* Pods.framework */,
+				382676BE5D74646679B0F260 /* Pods_DriveSafe.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -102,8 +104,8 @@
 			children = (
 				A1571A741C2B359200922698 /* DriveSafe */,
 				A1571A731C2B359200922698 /* Products */,
-				517B025DC85A34BD1CAE0C3D /* Pods */,
 				575A4BF7FBDE6680D5C04DAF /* Frameworks */,
+				3E4327BED429623A61A1CF67 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,12 +144,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1571A841C2B359300922698 /* Build configuration list for PBXNativeTarget "DriveSafe" */;
 			buildPhases = (
-				614C9A79FE4D07C58B9EDCC4 /* Check Pods Manifest.lock */,
+				BF0B75B4A542BCE91ED2734C /* [CP] Check Pods Manifest.lock */,
 				A1571A6E1C2B359200922698 /* Sources */,
 				A1571A6F1C2B359200922698 /* Frameworks */,
 				A1571A701C2B359200922698 /* Resources */,
-				FB5AE329AE31C9FF8663DC24 /* Embed Pods Frameworks */,
-				DC370FDEF74FDD25D431BB98 /* Copy Pods Resources */,
+				3DEDAC03E70C97042648A3E3 /* [CP] Embed Pods Frameworks */,
+				C11DB70DDD8D7310F014BC27 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,7 +172,8 @@
 				TargetAttributes = {
 					A1571A711C2B359200922698 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 3S25WNT6LV;
+						DevelopmentTeam = 3876732URN;
+						DevelopmentTeamName = "Jie Ke";
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -216,14 +219,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		614C9A79FE4D07C58B9EDCC4 /* Check Pods Manifest.lock */ = {
+		3DEDAC03E70C97042648A3E3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DriveSafe/Pods-DriveSafe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF0B75B4A542BCE91ED2734C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,34 +249,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		DC370FDEF74FDD25D431BB98 /* Copy Pods Resources */ = {
+		C11DB70DDD8D7310F014BC27 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FB5AE329AE31C9FF8663DC24 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DriveSafe/Pods-DriveSafe-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -376,14 +379,14 @@
 		};
 		A1571A851C2B359300922698 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B38EF844DD2A50C1329A1709 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = D8008C5512EF3BA776DD9A80 /* Pods-DriveSafe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Drive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sfhacks.Drivesafe;
+				PRODUCT_BUNDLE_IDENTIFIER = sfhacks.drivesafe;
 				PRODUCT_NAME = DriveSafe;
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 2.3;
@@ -392,14 +395,14 @@
 		};
 		A1571A861C2B359300922698 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 067EC4313145E732104B0CD0 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 06BD50E1311C93594E08DBED /* Pods-DriveSafe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Drive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sfhacks.Drivesafe;
+				PRODUCT_BUNDLE_IDENTIFIER = sfhacks.drivesafe;
 				PRODUCT_NAME = DriveSafe;
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 2.3;

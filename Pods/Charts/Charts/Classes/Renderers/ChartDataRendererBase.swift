@@ -8,7 +8,7 @@
 //  A port of MPAndroidChart for iOS
 //  Licensed under Apache License 2.0
 //
-//  https://github.com/danielgindi/ios-charts
+//  https://github.com/danielgindi/Charts
 //
 
 import Foundation
@@ -16,12 +16,13 @@ import CoreGraphics
 
 public class ChartDataRendererBase: ChartRendererBase
 {
-    internal var _animator: ChartAnimator!
+    public var animator: ChartAnimator?
     
     public init(animator: ChartAnimator?, viewPortHandler: ChartViewPortHandler)
     {
         super.init(viewPortHandler: viewPortHandler)
-        _animator = animator
+        
+        self.animator = animator
     }
 
     public func drawData(context context: CGContext)
