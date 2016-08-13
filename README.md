@@ -11,6 +11,9 @@ Recognized by Secratary Foxx of the USDOT and Congresswoman Anna G. Eshoo
 DriveSafe was coded in Swift using the Xcode platform for iOS.
 Its purpose is to facilitate driver safety by increasing the user's awareness about how fast they are going and the speed limit on the road that they are on. We used the Open Street Map API to find the speed limit of each street and Apple's Core Location kit to track how fast the user is going. The application prompts the user to enable "Do not Disturb" mode while driving and it also tweets #X (a tool that teens and others can use to pause a text or social conversation before driving). Also, Siri prompts the user to slow down if he/she is going 5mph over the speed limit. After the drive, it compiles the data into a driver rating which can then be sent to parents or guardians. We also overlayed a polyline on an MKMapView to give a more comprehensive view of the user's drive. Additionally, the app has a tips section to encourage good driving habits.
 
+#Authors
+DriveSafe is brought to you by [@andrewke](https://github.com/andrewke), [@arnav-gudibande] (https://github.com/arnav-gudibande), and [@nishand17](https://github.com/nishand17).
+
 #Tools Used
 
 Xcode - Platform for coding the app in iOS <br />
