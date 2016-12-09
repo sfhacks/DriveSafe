@@ -4,7 +4,7 @@ Driving made Safe. Made for 2015-2016 Congressional App Challenge
 
 Recipient of the 2nd place award for the Congressional App Challenge 2015 CA-18 
 
-Recognized by Secratary Foxx of the USDOT and Congresswoman Anna G. Eshoo
+Recognized by Secretary Foxx of the USDOT and Congresswoman Anna G. Eshoo
 
 #Description
 
